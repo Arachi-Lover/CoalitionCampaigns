@@ -1,0 +1,186 @@
+LUNARIUM START
+
+The switch is flipped.
+
+add Coalition positive to Lunarium attitude towards
+
+
+government "Heliarch (Vs Lunarium)"
+	"display name" "Heliarch"
+	swizzle 22
+	color 1 .8 .5
+	"crew attack" 1.3
+	"crew defense" 2.8
+	"player reputation" -1000
+	"friendly hail" "friendly heliarch"
+	"friendly disabled hail" "friendly disabled heliarch"
+	"hostile hail" "hostile heliarch"
+	"hostile disabled hail" "hostile disabled heliarch"
+	"attitude toward"
+		"Lunarium" -.01
+		"Quarg" -.01
+		"Quarg (Gegno)" -.01
+		"Quarg (Hai)" -.01
+		"Quarg (Incipias)" -.01
+		"Quarg (Kor Efret)" -.01
+
+
+
+
+mission "Lunarium Start 1"
+	name "Meet with the Lunarium"
+	description "Head to <destination>, where the Lunarium leaders are preparing to release a broadcast to the Coalition."
+	landing
+	source
+		government "Coalition"
+		not planet "Remote Blue"
+	destination "Remote Blue"
+	to offer
+		random < 15
+		has "outfit: Jump Drive"
+		has "joined the lunarium"
+		has "main plot completed"
+	on offer
+		conversation
+			`Touching down on <origin> you're greeted by a message to your comms, from seemingly no source your systems can identify.`
+			`	"Captain <last>, finished we have our preparations. To <planet> you must come. To the Coalition populace, release our broadcast we will."`
+			`	It seems the Lunarium is finally ready to make their move on the Heliarchy. You should head to <destination> when you're ready to assist them.`
+				accept
+	on complete
+		set "coalition at war"
+		conversation
+			`<planet> doesn't seem any different than from any of the other times you've come here, but given the discrete nature of the Lunarium's work you've come to expect that. A few Kimek approach the <ship> shortly after you land, and you follow them to the Lunarium complex. Once there, you're greeted by Chiree, Elirom, and Tummug.`
+			`	"Greetings, Captain <last>. Hope we do that a safe trip you have had," Elirom, Saryd and former Heliarch arbiter, is the first to welcome you, offering you his hand for you to shake.`
+			`	"Run we have the Quarg interview through many of our splinter groups. Confident now I am that shake the Heliarch's hold, it will." claims Tummug, the Arach in charge of much of the Lunarium's propaganda work.`
+			`	"Hope I do that it does, for a few weeks at least, or little chance we will have." says Chiree, the local Kimek leader of the Lunarium. She beckons everyone to follow, and you're surprised to see that the information complex in the underground base looks to have doubled in personnel since last you saw it, and the computers the army of Kimek tend to seem to be at an even greater number than that. When you reach the meeting room - now a much more cramped chamber, in no small part due to the large monitor that takes up nearly an entire wall - you find Pyakri, the Kimek responsible for organizing Lunarium fleets, and Oobat, the Arach linguist you brought to Lagrange to interview the Quarg on the subject of the Coalition. They're accompanied by even more Kimek, who seem to run to and from this room like freighters during a busy day in a large spaceport.`
+			`	"<first>! Good it is to see you. About you are to witness a historical event, the beginning of the end for the Heliarchy!" Pyakri proclaims once she sees you. Oobat, meanwhile, starts speaking with Tummug and Chiree, while working on a device with many transmitter-like mechanisms attached.`
+			`	"Ah, hello Captain, just finishing up we are the last tests. The origin point for the transmission, this little beauty is," Oobat explains once she notices you staring. "Just about ready, we are. Any last concerns or thoughts, anyone?"`
+			label questions
+			choice
+				`	"What's with all the extra crew and gear today?"`
+					to display
+						not "lunarium start: crew"
+				`	"Why is this broadcast so important? How is that interview going to help the Lunarium?"`
+					to display
+						not "lunarium start: importance"
+					goto importance
+				`	"Is Lobmab not coming?"`
+					to display
+						not "lunarium start: bebliss"
+					goto bebliss
+				`	"No questions. I say we begin."`
+					goto broadcast
+			action
+				set "lunarium start: crew"
+			`	"More personnel employing we are so that properly we can gauge the public reaction to the broadcast." Tummug explains, as he gestures to the myriad Kimek outside the meeting room. "Major news systems, mainstream media outlets, online forums and blogs. Monitoring we are the most important of those, throughout all the Coalition. Determine will our friends hard at work how, where, and why the broadcast most effective is."`
+				goto questions
+			label importance
+			action
+				set "lunarium start: importance"
+			`	Everyone seems to look to Chiree, just as she begins responding. "An outsider, you are, so vaguer, rather than obvious, the significance of this must be. For millennia now, lived have we in the shadows of gargantuan monsters. The ringworlds. The dark shadows by the past cast. The Quarg's indisputable existence." As she pauses, you think you catch a glimpse, just a moment, of her non-prosthetic legs briefly giving out. "Not merely instructed were we in history lessons... even in my humble youth, on Fourth Shadow, taught I was of the War of Independence's great horrors... a thousand years... hopeless defeat that for centuries lasted... our three species humiliated... even now, frightened by fairy tales, troublesome children are, so that behave they do, lest come for them, the Quarg will."`
+			`	Elirom interjects. "Fairy tale? A historical account, 'The Bloody Quarg' is, on that much, on that Quarg, the Heliarchs have never lied."`
+			`	For once, Pyakri seems to have no will to contest Elirom. "Read to me of that tale, my father would..." She trails off for a few seconds. "Well. What understand you must, Captain, is that the Heliarchs' great justifier, for everything in the past millennia, this fear of the Quarg has been. A settled war, they fight on still, and in seeking out enemies, the Coalition's people, their own charges, have harmed."`
+			label bebliss
+			action
+				set "lunarium start: bebliss"
+			`	"To the success of the broadcast ensure, hard at work Houses Bebliss and Idriss are. Ensuring they are that reach all planets and stations at peak audience engagement hours, the transmission will, regardless of orbits or time schedules." Oobat says.`
+			`	"Also, keep out of suspicion for the moment, the Lady Lobmab must," Elirom adds.`
+			label broadcast
+			action
+				clear "lunarium start: crew"
+				clear "lunarium start: importance"
+				clear "lunarium start: bebliss"
+			`	The others agree, and Oobat moves back, addressing Chiree. "Yours the honor should be.". Chiree looks around, as if considering all those present in the room, then heads to the device. She flips a switch on the device, and the monitor in the room comes alive.`
+			`	Oobat's person seems to have been blurred or cut out from the video itself, to keep her from being found by the Heliarchy so easily, but the Quarg itself is in perfect view, exactly as you saw it back on Lagrange. The video intercuts Oobat's interview questions with clips the Lunarium have prepared. After the Quarg responds that they are not intending to fight the Coalition again, and that they are not a warring people, you hear Tummug's voice narrating, as if reading from a document, a list of names, as the video shows clips of Heliarch troops storming factories, residence blocks and other civilian facilities, all while firing or attempting to arrest members of the Coalition species. This compilation of the Quarg's peaceful responses, contrasted by footage and narration of Heliarch activities, many with graphic imagery, continues for a few minutes. During a particular clip, where many Kimek are shown attempting to run or hide, you look around to see Pyakri close to Chiree, locking her own legs to Chiree's prosthetics in support. Strangely, your eyes cannot find Elirom. The broadcast continues for a few more rounds of questions, before the screen goes black, and now Pyakri's voice comes. "Forgotten, the past is not. To fight the oppressors of innocents, our Coalition arose. Now, as then, on the ringworlds resides the enemy. For the Coalition's values, and its innocents, we of the Lunarium Redoubt do declare war upon the Heliarch oppressors." A shining sun symbol is shown, but gradually, quickly, it begins to crumble, darken, and seemingly rot, before being engulfed by two twin crescent moons.`
+			scene "scene/lunariumlogo"
+			`	The room stays silent for a few seconds. Then, Chiree of all people is the first to cheer, and soon everyone picks up the celebratory tone. Elirom, now returned, smiles at you, and you see many of the Kimek passing by are doing so now with an increased sense of purpose. You all leave the room, and the group spreads to check on different groups, focusing on specific sections of the Coalition's, and their reactions to the broadcast. You try your hand at doing the same, and pace around the complex, talking with the Kimek in cubicles where you judge your intrusion would be least disruptive. From what you gather, the Heliarchs have been attempting to drop the transmission since the signal was first transmitted, before the interview even began. "Standard information security policy of theirs," one of the Kimek you talk to explains. In terms of civilian reaction, the public seems very torn between questioning the veracity of the interview, and silently supporting it. "Gauge we can the support based on these social and behavorial factors," another Kimek attempts to explain to you, as he points to a plethora of graphs and charts in many computer tabs that you can neither read nor make any sense of. Eventually, you get bits of information here and there, putting together that, broadly speaking, Kimek space is where the transmission was most well received, followed by the Arachi, and then the Saryds.`
+			`	"Expected, that was, given the population distribution," Elirom says, when you're all back together in the meeting room.`
+			`	"That, and the privilege of some making them more comfortable." Pyakri interrupts.`
+			`	"Not ready to accept the sad reality we showcased, many are." Tummug interrupts her in turns. "Which is why keep acting, and proving it true, we must. Evidence, we require, and for that, fight, we shall. Captain <last>, meet Pyakri and I on the spaceport within an hour, you shall. Move at once, we must."`
+			`	The others agree, and start making their own preparations. You say your goodbyes, wish everyone good luck, and head back to your ship, escorted by the same Kimek who brought you here.`
+
+
+mission "Lunarium Start 2"
+	name "Transport Tummug and Pyakri"
+	description "Take Tummug and Pyakri to <destination>, you will prepare for the first battle against the Heliarchs."
+	source "Remote Blue"
+	destination "Glittering Ice"
+	passengers 2
+	to offer
+		has "outfit: Jump Drive"
+		has "Lunarium Start 1: done"
+	on offer
+		conversation
+			`The spaceport on <origin> seems to be mixed on how to react to the broadcast. On the one hand, many groups seem like they could have come right out of the Lunarium's headquarters, in their celebrating the announcement that a group will fight the Heliarchs. Meanwhile, others seem skeptical about the entire thing, in particular about the truthfulness of the interviewed Quarg's answers.`
+			`	It doesn't take long for Tummug and Pyakri to locate you, despite the rather hectic environment here today. "The perfect base for this initial move, <origin> was! So few Heliarchs, and so many with them dissatisfied." Pyakri greets you first, as Tummug gestures for you to move to your ship. Once you shut the hatch, he begins explaining the plan.`
+			`	"To <planet> we must go. Nearby, on Shadowed Valley, estimate we do that encroaching on one of our main splinter forces the Heliarchs are. Corner them we shall, and with your help, Captain <last>, hope I do that claim will we the first victory in this war."`
+			`	"Already preparing are the forces on <planet>. Help secure your rear, I shall, much as like to participate in the battle directly, I would," Pyakri continues. "But, equally important is it, to ensure that the checkpoint in our favor works."`
+			choice
+				`	"Is it wise to attack right now? I thought we were way behind them in terms of firepower."`
+				`	"How much of a fleet are we expecting from the Heliarchs? We will need to outnumber them by a lot to win."`
+			`	"More to our plan, there is," Pyakri explains. "Arranged have we for a few precise strikes on the Saryd factory world of Ceaseless Toil. Not costly, they are, but of great danger will they be to the production chain, should ignored, they be. Send there most of the fleets in Saryd space stationed, the Heliarchs will."`
+			`	Tummug agrees, showing you a map of the Coalition on a data pad. "A few days from <planet>, Ceaseless Toil is. Carried out while en route there, the attacks will be. Find nothing and noone, the Heliarchs will, but grant us a chance, they shall. Tremendously impressive, the Saryd industrial complex is, but also dangerously centralized. On two worlds alone, Ceaseless Toil and Dilligent Hand, nearly three quarters of their production lies. Afford any manner of likely damage to them, the Heliarchs cannot."`
+			choice
+				`	"Alright, so we'll take them by surprise, but what happens next? How will we escape?"`
+				`	"So are we going to make our stand there on <planet>?"`
+			`	They seem to have been expecting the question. Pyakri speaks first, "Hard at work for decades by now, the Lunarium has been. Only the most recent members of its leadership, are we. Carefully laid out over the years, certain arrangements and preparations have been, by Houses Bebliss and Idriss. Interfere with Heliarch information systems and propagation of their intel, they shall. With that, hoping we are that remain anonymous after battles, we can. Of course, unsure are we as to how long that protection may last..."`
+			`	"But, fear being trapped in that system, you need not, Captain. With your jump drive, closest to you, our real target is." Tummug says, seemingly enjoying the look on your face, trying to understand what he means. "Yes, require we do more resources. Material. For ships, weapons, systems... And in terms of lightyears, very close to Fallen Leaf, Bloptab is. A treasure trove it is, full of the mightiest metals our Coalition has ever produced. Ripe for the taking, they shall be, once diverted their fleets from there, our attacks in Saryd space have. Succeed, we will."`
+			`	"Succeed, we must," Pyakri agrees. They tell you a fleet of Lunarium ships will follow you after you've arrived at <planet>, so that you can continue with the attack plan. Afterwards, they will provide you with more detailed information. You show them to their bunks, and prepare for your flight to <destination>.`
+				accept
+
+
+mission "Lunarium Start 3"
+	landing
+	name "Battle of Fallen Leaf"
+	description "Head to <system> with Tummug and the Lunarium fleet, disable all Heliarch ships, and land on <planet>."
+	source "Glittering Ice"
+	destination "Shadowed Valley"
+	passengers 1
+	to offer
+		has "Lunarium Start 2: done"
+	on offer
+		conversation
+			`The trip from Glittering Ice has been anything but uneventful. Tummug and Pyakri have constantly reported on reactions of the Coalition civilians and Heliarchs alike about the Lunarium broadcast. "Claiming still they are that artificially produced, the video footage was," Tummug notes as you're coming in for a landing.`
+			`	Pyakri scowls in response. "Naturally. Admit they would not their own crimes. Expect I do that deny everything until their graves, the consuls will. But, troubling it is that believe such dismissal, some do... And of the attacks on Ceaseless Toil? Any news are there?"`
+			`	"At highest alert, Saros is. Fear they do an attack on the Saryd homeworld - which never attempt, we would," Tummug cuts to you, as if in reassurance. "No, to truly protect our people, we aim. Lost in the attack, no lives were, and only military targets, did we hit. Still, all but the smallest fraction of support do we now have in Saryd space. Change that, we must... a great need will we have of the Saryds themselves, even if forever oppose us, Saros must."`
+			`	You finish landing proceedings, and Pyakri leaves your ship, explaining she will meet up with the fleet that will prevent Heliarch forces from heading to <system>. Tummug stays in your ship, and you two begin to wait. Every other minute, a civilian Coalition ship landing close to your own catches Tummug's attention, and he begins messaging in his communicator. After just under an hour, it seems he has confirmed all the fleet that will be accompanying you is ready.`
+			`	"Follow your own ship they shall, relying are we on your combat expertise, Captain. Now, suggest I do that, if possible, avoid destroying the Heliarch ships, you do. Outmatched in both ships and weapons, we are, so hoping we all are that close the gap can we by capturing Heliarch vessels that in combat we best." He confirms once again with the rest of the fleet to wait for your departure, and heads to his bunk. "Good luck, Captain <last>."`
+				accept
+	npc accompany
+		government "Lunarium"
+		personality escort disables heroic
+		fleet
+			names
+			variant
+				
+	npc
+		government "Lunarium"
+		personality disables staying heroic
+		system "Fallen Leaf"
+		fleet
+			names
+			variant
+				
+	npc evade
+		government "Heliarch (Vs Lunarium)"
+		personality staying heroic
+		system "Fallen Leaf"
+		fleet
+			names
+			variant
+				
+	on visit
+		dialog `There are still Heliarch ships patrolling overhead. Staying on <planet> while your allies are dying in orbit would be a very bad idea.`
+
+
+mission "Lunarium Start 4"
+	landing
+	name "Meet with Lady Lobmab"
+	description "Go to <destination> to meet with Lady Lobmab Bebliss, and prepare for the raid on the stores of raw materials there."
+	source "Shadowed Valley"
+	destination "Delve of Bloptab"
+	to offer
+		has "Lunarium Start 3: done"
+	on offer
+		conversation
+			``
