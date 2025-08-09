@@ -1,0 +1,342 @@
+HELIARCH START
+
+You're in the army now.
+
+
+outfitter "Heliarch Second Unlock"
+	"Bombardment Cannon"
+	"Bombardment Turret"
+	"Finisher Pod"
+	"Finisher Torpedo"
+	"Overcharged Shield Module"
+	"Overclocked Repair Module"
+	"Small Reactor Module"
+
+outfitter "Heliarch Third Unlock"
+	"Finisher Storage Tube"
+	"Heliarch Attractor"
+	"Heliarch Repulsor"
+	"Large Reactor Module"
+
+outfitter "Heliarch Final Unlock"
+	"Chainshot"
+	"Chainshot Turret"
+	"Finisher Maegrolain"
+	"Heliarch Mortar"
+	Chonker Battery Module?
+	Beeger Generator?
+
+shipyard "Heliarch Second Unlock"
+	"Heliarch Breacher"
+	"Heliarch Neutralizer"
+
+shipyard "Heliarch Third Unlock"
+	"Heliarch Hunter"
+	"Heliarch Interdictor"
+	"Heliarch Judicator"
+	"Heliarch Pursuer"
+	"Heliarch Rover"
+	"Heliarch Stalker"
+
+shipyard "Heliarch Final Unlock"
+	"Heliarch Punisher"
+
+
+mission "Heliarch Start 1"
+	name "Report to the Consuls"
+	description "Head to <destination> to meet with the Heliarch consuls,"
+	landing
+	source
+		government "Coalition"
+	destination "Ring of Friendship"
+	to offer
+		random < 15
+		has "outfit: Jump Drive"
+		has "joined the heliarchs"
+		has "main plot completed"
+	on offer
+		set "coalition at war"
+		conversation
+			`Halfway through your refuelling proceedings, <origin> seems to freeze. All monitors, audio and video feeds, communication devices, and virtually every other form of machinery related to transmitting the local advertisement and official messaging, are cut. The ominous static lasts but for a second, before all of them, whether the property of Heliarchs or civilians alike, begin a broadcast.`
+			`	A blurred figure is shown close to a Quarg, in something like an interview format. Besides the blur, the video sometimes omits the interviewer figure altogether, though the vague silhouette of an Arach can be picked out. The Quarg itself, however, is in perfect view. The Arach interviewer asks whether the Quarg intend to ever fight the Coalition again, and it responds firmly that no, and that they never sought to fight. The video then intercuts the interview questions, while another Arach voice narrates, as if reading from a document, a list of names, as the video shows clips of Heliarch troops storming factories, residence blocks and other civilian facilities, all while firing or attempting to arrest members of the Coalition species. This compilation of the Quarg's peaceful responses, contrasted by footage and narration of Heliarch activities, many with graphic imagery, continues for a few minutes. If the civilians watching the broadcast are confused, the Heliarch agents you can see are downright thunderstruck. Many are trying to find the root of the invasion of the local systems, but most seem to have been completely caught by surprise, in a manner that their military training and preparation cannot quite overcome. The broadcast continues for a few more rounds of questions, before the screen goes black, and now a Kimek voice comes. "Forgotten, the past is not. To fight the oppressors of innocents, our Coalition arose. Now, as then, on the ringworlds resides the enemy. For the Coalition's values, and its innocents, we of the Lunarium Redoubt do declare war upon the Heliarch oppressors." A shining sun symbol is shown, but gradually, quickly, it begins to crumble, darken, and seemingly rot, before being engulfed by two twin crescent moons.`
+			scene "scene/lunariumlogo"
+			`	At first, the end of the broadcast is met with a few seconds of quiet that bangs at your eardrums. Then it starts, and you run back inside the <ship>. Despite the thick walls of your starship, the panic that's taken hold of the outside easily makes itself heard within it. Civilian captains seem to be departing with utmost haste, to wherever it is they feel is the best, or safest, place to go now. Local Heliarchs are doing their very best to attempt to keep everything mostly orderly, but are having as much of a positive effect as you would expect, after such a show against them.`
+			`	From what information you're able to find from across the Coalition, the broadcast was not limited to <origin>: everywhere other than the Heliarch ringworlds was affected similarly, and while levels of support or criticism about the broadcast itself vary greatly from planet to planet, the chaotic state of the local populace seems to have taken hold of the otherwise so peaceful Coalition.`
+			`	You're still looking for more data, when you receive a highlighted message, directly from the <planet>:`
+			``
+			`Captain <first> <last>,`
+			`	Report at once must you to the <destination>, where receive orders you will to assist in tracking and eliminating the source of terror message.`
+			`	Heliarch Consulate`
+			``
+			`	Given the briefness of the letter, you imagine the Heliarch consuls are overwhelmed with the broadcast, and the reactions to it, not too unlike the agents on the ground here on <origin>. You set a course to the <planet>, imagining just what they believe you can do to help.`
+				accept
+	on complete
+		conversation
+			`The <planet> has always had one of, if not the most orderly and smoothest flux of starships and crew you've ever seen. The current state here makes that thought seem like part of some sarcastic mockery. You see very few Civilian ships, as nearly all the landing pads are constantly becoming vacant, then being filled by the next incoming Heliarch warship. Pedestrian flux is experiencing an all-time chaos, and not only the few civilians around, but also the lower ranking Heliarchs also struggle to figure a path to wherever they wish to go, as batallions of security personnel are patrolling the grounds, performing inspections on ships and the surrounding people, and most importantly, escorting the Heliarch consuls.`
+			`	From the looks of it, every single consul has been recalled to the <planet> in response to the broadcast, and are being guided into the restricted sections right as they arrive. A Heliarch Punisher lands close to the <ship>, and out of it comes an old Saryd: Consul Aulori, lead researcher of the Heliarchy in understanding the Quarg, their technology, and means to reverse engineer and combat it. His entourage forces its way through the masses, into the restricted sections, and he soon disappears from view.`
+			`	Just as you're losing hope that you're ever going to be able to set foot outside the <ship>'s hatch, a couple of Saryds come galloping straight at you. "Captain last, escort you to the consul we shall," one of them says, and before you can think to question which of the consuls he means, you're in the middle of their group, moving in a sliding corridor through the great number of people here.`
+			`	When you enter the restricted sections, the environment becomes much more manageable, though still a lot more busy than the usual. You're guided through many long halls, and seem to be being brought to the same chamber where you first received your Heliarch circlet. Then, just before the entrance, your group makes a sharp turn, and you're in a room, faced with a hefty Kimek, Consul Iekie, one of the chief Heliarchs involved in investigating criminal activity within the Coalition.`
+			`	"Greetings, Captain <last>. Pardon us you must for the hectic state of the ringworld. In a state of alert, we all are."`
+			choice
+				`	"What's with all the movement here? What's going on?"`
+				`	"Was the broadcast that bad for the Heliarchy?"`
+				`	"Do you think that Quarg interview was real?"`
+			`	She goes to respond, but is interrupted by an Arach calling at the entrance of the room. "Consul, settled in, most are. Begin soon we expect they shall."`
+			`	Iekie taps one leg on the floor very quickly a few times. "Very well. Accompany me you will, <last>. Converse more later, we can, and present you your assignment, I shall."`
+			`	You follow Iekie and her aides into the auditorium, and the chaotic tone returns somewhat, as you can hear a cacophony of the various Coalition languages, both spoken by the consuls and translated by their devices, filling the gigantic chamber. The other consuls have brought their own assistants as well, and so it takes you all a few minutes to make your way to the reserved seats. You look at Iekie, and notice her seating is closest to the center of the room, and has a console panel of sorts at her level, with microphones, many buttons and other apparatus.`
+			`	A few more consul groups come in after you, and eventually everyone has arrived, and the chamber doors are sealed. Drones fill in from above, and roughly a third of them head out to the consuls. Iekie presses the tip of one of her legs briefly against a screen-component attached to the one that came to her, and as you look you see that all other Kimek consuls are doing the same, but no drone went for any Arach or Saryd consul. The drones assemble at the center of the auditorium, uniting their screens into one as large as that of a movie theater. Three strings of letters appear, each one in one of the main Coalition languages, and then it rapidly changes, again and again, dozens of different combinations appearing every second. After about half a minute, the phrases begin to slow down, until stopping, and the chamber speakers come alive with a robotic voice. "Selected as First Speaker for this assembly, Consul Kie'kei has been." The consuls raise in unison, and briefly salute the Kimek consul in question, who is now being projected in the large screen.`
+			`	"Alternate between species, the role of First Speaker always has," Iekie explains to you in a low voice, while Kie'kei is speaking about some formalities, introducing the obvious purpose for the gathering. "Next time, selected amongst the Arach consuls, the role will be. This way, ensure we do a fair balance of power between our three species."`
+			`	After Consul Kie'kei has finished his speech, the consuls get to discussing their options, and gradually, rapidly, the situation devolves into a hectic discussion. "Propose do I a motion!" Booms the voice of an Arach consul. "Declare at once we must the broadcast what it is, a fabricated falsehood, a media produced artificially, simulated, to our honorable Coalition destabilize!"`
+			`	She has barely finished speaking, when Consul Aulori launches an objection, supported by many of what seems to be a lobby of consuls from the Ring of Wisdom. "Preposterous!" He scowls, as he and his aides move from their seats, down to the floor below, bringing about many machines. The camera drones focus on them, as they prepare five sets of computers, all playing the broadcast. "While true it may be that full of treachery and lies the broadcast is, assure you can I of the veracity of this Quarg's participation in it." He pauses all screens during one close-up on the Quarg's face, where you can perfectly see its bright purple eyes. "Running we are a wholly different recognition algorithm in each of these machines. Observe, as attempt I do at determining whether truthful or artificially produced, this Quarg is."`
+			`	The entire auditorium is held silent, as the five machines stay there, on the ground floor, performing their operations. Then the first bits of smoke come out, and one computer fries up with sparks and shock, with the four others following the seconds after. "Fifty more such failures, on the Ring of Wisdom I witnessed before here coming. Their lies, their voice, even their skin and features, artificially produced may be, but no matter how sophisticated, process the view of a Quarg's irises, no machine by us ever invented can, much less produce such a view. Take the Coalition people for fools, do we? Know that, they do, so lie to them about the Quarg itself, we must not." Aulori concludes. "Accept, we should, that in contact with the enemy, this 'Lunarium' is, and properly denounce them as traitors and conspirators both."`
+			`	Aulori's presentation only further instigates the discussion between the consuls, and the First Speaker is obligated to cut down microphone access a few times, in attempts to restore order. Eventually, he manages to sway the topic of discussion back around to actions they can take immediately to help keep the order in worlds where the broadcast caused the most troubling reactions. After a couple of minutes, Consul Plortub, a veteran of the Heliarch military and one of their most experienced fleet commanders, is invited to speak. The Arach consul takes to the floor, and presents a map of the Coalition.`
+			`	"Most required is our action within Kimek space. Dispatched have we many ships full of interpreters and agents alike, to Ki Patek Ka and other worlds, but requested reinforcements, they have." You note that while Plortub clearly isn't used to speaking to the full Heliarch Consulate, he seems particularly uncomfortable discussing the topic. "Keep the populace in check, we must, else risk we do making ourselves open for the Lunarium's first strike. Attack soon, they must, or lose all momentum of the broadcast, their movement will. Now, good reason have we to suspect of the broadcast's origin point. After some elimination, determined my team has that the far world of Remote Blue-"`
+			`	"How dare you of treason my world accuse!" An elderly Kimek consul echoes throughout the chamber. "Fought did we against the Quarg! Bled and died, my ancestors have, on this ringworld and others both alike! If pointing at traitors, we are, look should you inwards, towards the rotten apples of the Arach Houses!"`
+			`	Once again, Kie'kei cuts the microphones, but the shouting amongst some of the consuls continues well after that. Eventually, everyone settles for a pause, agreeing to resume within the hour. You follow Iekie and her group back out of the chamber, and into the room from before. Despite her alien features, you're quite capable of noting the shame in Iekie's eyes. "Forgive us all you must, Captain. Not at all like ourselves, this broadcast has left us... A disservice to the great history of our just and venerable proceedings, that meeting was."`
+			label questions
+			choice
+				`	"The consuls don't seem nearly as united as I had expected, given there's been a war declaration."`
+					to display
+						not "heliarch start: united"
+					goto united
+				`	"How come nobody brought up the broadcast showing Heliarchs attacking civilians? Did you know about that?"`
+					to display
+						not "heliarch start: attack"
+					goto attack
+				`	"Do you think Consul Aulori is right, in that that was a real Quarg?"`
+					to display
+						not "heliarch start: quarg"
+					goto quarg
+				`	"So, what do we do now?"`
+			action
+				clear "heliarch start: united"
+				clear "heliarch start: attack"
+				clear "heliarch start: quarg"
+			`	"Now, return to the council, I must. Convene amongst ourselves alone now, we shall. Hope do I that avoid any further embarrassing displays such as those you witnessed, we can..." She lets out a series of low clicks, that you imagine must be akin to an exasperated sigh. "In the meantime, escorted you will be back to your ship. Within a few hours, once cleared, the outside chaos has, meet you in the spaceport, I shall."`
+			`	The same Saryds from earlier arrive at the room just as Iekie finishes speaking, and she gestures for you to go with them. She follows you out, and starts making for the auditorium again. You notice that now, only the consuls are entering, as their aides either follow you out, or stay in the adjacent rooms. the consuls left from. Once again you face the masses of Saryds, Kimek and Arachi outside the restricted area, eventually arriving at the <ship>. "Remember, meet you must with Consul Iekie in the spaceport once finished deliberating, the council has." One of the Saryds reminds you just before they start their journey back through the sea of people.`
+				decline
+			label united
+			action
+				set "heliarch start: united"
+			`	"A multitude of views, does our Heliarch accomodate. Unfortunate, it is, that first viewed it in such... drastic disagreements, you have. But, a terrible situation, this is, so to be expected, I suppose this was... rivalries within rivalries, often times this political aspect of our Coalition is. Believe me, Captain, wholly united and committed are we consuls to the safety and freedom of our people. Passionate for our cause, we all are. Often times, manifest erratically and in impolite manners, such passion does, but dedicated nonetheless, we are."`
+				goto questions
+			label attack
+			action
+				set "heliarch start: attack"
+			`	She eyes you up briefly. "Cleverer you are than to be deceived by the likes of such a feeble attempt at manipulation, Captain. Yes, know of the attacks I did. Authorized by me, one of them even was, if mistaken I am not in recognizing one of the agents there. Spoken about it, we have not, for know we do what those clips are. Context-less accusations. Protect our people, we do, and thus attack only those involved in such a group as this 'Lunarium Redoubt' our agents do. Understand I do that frightened, the innocents in the footage were, and grieve do I for any trauma caused. Assure you I can, with all my self, that more than capable are our agents of combating these terrorists, without an innocent in crossfire being caught."`
+				goto questions
+			label quarg
+			action
+				set "heliarch start: quarg"
+			`	You notice Iekie's legs rapidly move just slightly closer to her body, as if in a shiver. "Unfortunate it is, that admit his point I must. Rarely have I agreeable found him, but the truth it is that evade our understanding, much of Quarg biology does. Their eyes, in particular, difficult to analyze have always proven." She pauses, examining the room. "Yes, a real Quarg, that was. Disprove that much, no technology of our own could."`
+				goto questions
+
+
+mission "Heliarch Start 2"
+	name "Reinforcements to Ki Patek Ka"
+	description "Travel with the Heliarch ships to <destination>, where the fleets' crew will reinforce the local agents in dealing with the broadcast crisis."
+	source "Ring of Friendship"
+	destination "Ki Patek Ka"
+	to offer
+		has "Heliarch Start 1: done"
+	on offer
+		"salary: Heliarchy" = 2000
+		event "second heliarch unlock"
+		"reputation: Lunarium" <?= -10
+		conversation
+			`The Heliarchs are still working on clearing ways and putting order back in the <origin>'s bustling public sections, but by the time you're headed to the spaceport to meet with Consul Iekie again you can at least make your way relatively quickly, without an escort of tall Saryd Heliarchs all around you.`
+			`	Being the only human around, one of the agents Iekie must have left as a lookout for you is quick to get your attention, and bring you to a square of sorts, which is almost perfectly in order, and where the consul is waiting. "Hello again, Captain <last>. Glad am I to a more amicable face encounter." She shifts her head low, briefly. "A lot of work it required, but agreed have we upon greater countermeasures. Thankfully recognized Consul Plortub's approach as more sensible, the majority of us did, and so elected have we to proceed with reinforcing systems in most dire need of it."`
+			`	She makes a gesture, and one of her aides produces a digitalized map of Coalition space. "Approved has been a fleet to reinforce <destination>. A great many dozens of billions, my homeworld houses, and as such the greatest challenge for our peacekeepers, in light of the broadcast's chaos, it has proven. Travel will you there with the fleet, so that relieve can they the agents, if only partially..." She trails off, almost sounding the slightest bit unsure of this plan. "Well, after that, a few more tasks for you, I shall present. In the mean time, happy I am to inform you that approved your salary, as a Heliarch, I have. 2,000 daily credits, the equivalent it is to a high-end position within our ranks of agents. As an extraordinary guest, and now comrade in arms, you are, only fair, the sum to me seemed."`
+			`	Iekie goes on to introduce you to the captains of the ships that will be following you to <planet>, and they all seem enthusiastic to greet you and congratulate you for joining the Heliarch ranks. After you've awkwardly shook one of the legs of the last Kimek captain, Iekie and some guards accompany you back to the <ship>.`
+			`	"Ah, yes! Forgetful I am today, I am afraid, Captain. Take its toll on the mind, such long meetings of the council can." She exclaims just as you've lowered the hatch. "In addition to your salary, finally passed through, some bureaucratic leases have, and approved you were to access some of our ships, and more outfits. Still sorting out the local facitilies, we are, but ready when you next arrive here, or when you reach <planet>, the shipyard and outfitter will be. Fly safely Captain."`
+				accept
+	npc accompany save
+		government "Heliarch"
+		personality escort disables heroic
+		fleet
+			names "heliarch"
+			fighters
+				names "heliarch fighter"
+			variant
+				"Heliarch Neutralizer" 5
+				"Heliarch Interdictor" 2
+				"Heliarch Judicator" 3
+				"Heliarch Pursuer" 6
+				"Heliarch Rover" 6
+				"Heliarch Stalker" 6
+
+event "second heliarch unlock"
+	planet "Ring of Friendship"
+		shipyard "Heliarch Second Unlock"
+		outfitter "Heliarch Second Unlock"
+	planet "Ring of Power"
+		shipyard "Heliarch Second Unlock"
+		outfitter "Heliarch Second Unlock"
+	planet "Ring of Wisdom"
+		shipyard "Heliarch Second Unlock"
+		outfitter "Heliarch Second Unlock"
+	planet "Saros"
+		shipyard "Heliarch Second Unlock"
+		outfitter "Heliarch Second Unlock"
+	planet "Ahr"
+		shipyard "Heliarch Second Unlock"
+		outfitter "Heliarch Second Unlock"
+	planet "Ki Patek Ka"
+		shipyard "Heliarch Second Unlock"
+		outfitter "Heliarch Second Unlock"
+	planet "Belug's Plunge"
+		shipyard "Heliarch Second Unlock"
+		outfitter "Heliarch Second Unlock"
+	planet "Stronghold of Flugbu"
+		shipyard "Heliarch Second Unlock"
+		outfitter "Heliarch Second Unlock"
+	planet "Delve of Bloptab"
+		shipyard "Heliarch Second Unlock"
+		outfitter "Heliarch Second Unlock"
+	planet "Far Home"
+		shipyard "Heliarch Second Unlock"
+		outfitter "Heliarch Second Unlock"
+	planet "Dwelling of Speloog"
+		shipyard "Heliarch Second Unlock"
+		outfitter "Heliarch Second Unlock"
+	planet "Blue Interor"
+		shipyard "Heliarch Second Unlock"
+		outfitter "Heliarch Second Unlock"
+	planet "Sandy Two"
+		shipyard "Heliarch Second Unlock"
+		outfitter "Heliarch Second Unlock"
+	planet "Second Rose"
+		shipyard "Heliarch Second Unlock"
+		outfitter "Heliarch Second Unlock"
+	planet "Station Cian"
+		shipyard "Heliarch Second Unlock"
+		outfitter "Heliarch Second Unlock"
+
+
+mission "Heliarch Start 3"
+	landing
+	name "Fleet to Fourth Shadow"
+	description "Travel with another Heliarch fleet to <destination>, where they'll look into riots and attacks that happened following the Lunarium broadcast."
+	source "Ki Patek Ka"
+	destination "Fourth Shadow"
+	to offer
+		has "Heliarch Start 2: done"
+	on offer
+		conversation
+			`A week ago, you would have said that the Ring of Friendship's crowding and confusion was the most chaotic a Coalition world must have been in thousands of years. Now, you know how wrong a statement that would have been. The other captains of the Heliarch fleet tried to warn you in advance of the turmoil that's taken hold of the Kimek homeworld, but you didn't expect to see so much movement - before you even landed, you could see the masses moving below, as you approached the main spaceport, and for some lengthy seconds your eyes could only perceive the planet itself shifting and stirring in waves.`
+			`	Surprisingly, your fleet is rapidly admitted for landing, despite the pandemonium of ship traffic blocking out much of the sky above Ki Patek Ka's largest megalopolis. You realize the Heliarchs must have claimed the spaceport entirely for themselves, as no ships but their own warships are in sight amidst the docks and landing pads.`
+			`	The Heliarchs coming out of the ships that followed you here do so in the orderly, beautifully coordinated fashion you've come to expect from them, but those already stationed here make no effort to hide their exhaustion. You head to speak to some of the local agents, and find a mixed bag of reactions. On the one hand, many are understanding of the local populace's agitation, and regret that the enemy has used manipulated footage to rally the civilians. Others seem angered by those who believed the broadcast. "A betrayal it is! Signed up I did to protect them, and look how ungrateful they are! As if ever harm our own, we could..." One particularly irritated agent tells you.`
+			`	In smallest number are those agents whispering in corners and alleys, at first reluctant to speak with you, but some eventually voice their concerns that parts of the broadcast may not have been wholly fabricated. You're alerted by your circlet that Consul Iekie has sent you a message, and run back to the <ship>. Once in your cockpit, you find she has left you instructions on how to proceed next.`
+			`	"Captain <last>, glad am I that safely arrived, the fleet has. Hope I do that quell they can the people of <origin>. Honest and loyal, those of my homeworld is, and protecting them from that outrageous broadcast and its lies, our duty also is. Now, another fleet, accompany you must. Headed to <destination> they are. A major manufacturing world, and... at higher risk of influence from the broadcast, it is. Reinforce the system we must, in case an attack, there is."`
+			`	Shortly after, some other Heliarchs come to meet you, introducing themselves as the captains of the other fleets that will be going to <planet>. They say they will wait for your departure, and follow your lead.`
+				accept
+	npc accompany save
+		government "Heliarch"
+		personality escort disables heroic
+		fleet
+			names "heliarch"
+			variant
+				"Heliarch Breacher" 2
+				"Heliarch Hunter" 2
+				"Heliarch Interdictor"
+	on complete
+		conversation
+			`Just as Iekie said, <planet> is also in quite a state of disarray, but not nearly as much as <origin>. The Heliarchs here appear far more alert and ready for their tasks, and the fleet you brought only briefly greets you as they disembark, before dispersing throughout the planet to perform their duties.`
+			`	Then, the monitors and screen all shift at once, and just for a second you get the feeling another broadcast is coming. The screens however all shift to Heliarch news. Footage of a sun-scorched desert world is shown, with pillars of smoke spiralling to the skies, coming from a wrecked section of a large factory complex, and the Saryd announcer begins. "Hours ago, began a series of attacks did on the factory world of Ceaseless Toil. An act of war it was, perpetrated by the self-proclaimed 'Lunarium Redoubt' criminal organization. One of the pillars of manufacturing in Saryd space, the planet is, and provide it does consumer goods on a tremendous scale, notably clinical and medical goods, surgical equipment, and prosthetics, shipped to all of our Coalition. Local Heliarch fleets report that no casualties for now have been confirmed, but destroyed much of one of the main industrial centers was, and nowhere to be found, the attackers are. Gone into hiding, they have, and urge we do our peoples to assist their local Heliarchs in locating the terrorists. Two years ago, the production of replacement components for Kimek hunger towers on Ceaseless Toil began."`
+			`	The transmission starts to loop, showing different parts of the damaged area of Ceaseless Toil, the Saryd's message, and other Heliarchs explaining how civilians can help look for and identify suspects. Sure enough, <planet> decides to give <origin> a run for its money, as what semblance of order seemed to be returning is completely overruled now by outraged Kimek civilians and the baffled Heliarch agents. You head back to your ship as quickly as you can, hoping you can wait out the worst of the chaos...`
+			`	An hour after you've gotten back into the <ship>, you receive a message from one of Iekie's aides, simply instructing you to head to the spaceport, and meet with a group of agents there, once the situation calms down.`
+
+
+mission "Heliarch Start 4"
+	name "Agents to Double Haze"
+	description "Take the <bunks> Heliarch agents to <destination>, where Consul Iekie suspects another Lunarium attack may happen."
+	source "Fourth Shadow"
+	destination "Double Haze"
+	to offer
+		has "Heliarch Start 3: done"
+	passengers 9
+	blocked `You have reached <origin>'s spaceport, but you need <capacity> in order to take on the next mission. Return here when you have the required space free.`
+	on offer
+		conversation
+			`Whereas before the masses here on <origin> seemed to be troubling the Heliarch agents as a result of the Lunarium broadcast, now many have shifted into overcrowding recruitment offices and other government buildings designated for voluntary work. The stark contrast from just a few hours ago has many of the local Heliarchs simultaneously confused and eager to switch to less stressful work.`
+			`	There is also something of a focus on you, with local Kimek and some Heliarch news teams coming to ask you on your opinion, thoughts, concerns and ideas on how to deal with the broadcast, war declaration, and terrorist attack. You can only briefly think and get any word out for one question before another five come in, and you start thinking it might've been easier to move through the spaceport if you had left when the chaos from earlier was still ongoing.`
+			`	Halfway through your third interview, you're rescued by several Heliarch agents cutting off the reporters, as they make quick mentions to you about reaching your ship. The Saryds of the group block and push away the reporters with their bodies, and you're helped away by the Kimek and Arachi of the group. Once you're back in the <ship>, safe from all paparazzi, one of the Arachi introduces herself as Potub, and though you had guessed as much already, informs you they are Iekie's selected agents. "Make haste must we to <destination>. Believe the consul does that preparing for an attack there, the enemy may be."`
+			choice
+				`	"Right, I'll be taking off as soon as I can."`
+					goto accept
+				`	"Why would the Lunarium attack Double Haze?"`
+			`	"Gathered have we that, given the attack on Ceaseless Toil, taking advantage of lighty-guarded, fringe worlds with manufacturing capabilities they are," she explains. "While populous, not a significant hub to Heliarch patrol fleets, <planet> is. And, possess it does a relevant manufacturing industry, which the enemy may target."`
+			`	One of the Kimek from the group speaks up as well. "Evidence there is that facilitated by agents on the ground, the Ceaseless Toil raid was. Tasked us the consul has with seeking out such suspects on <planet>."`
+			label accept
+			`	You show the agents to their bunks, and plot a course to <destination>. You then make sure to set up some filters to your ship's media systems once it becomes clear the reporters from before have somehow acquired your contact information. Hopefully they'll give it up, eventually.`
+				accept
+
+
+mission "Heliarch Start 5"
+	landing
+	name "Defend Double Haze"
+	description "Defeat the Lunarium forces attacking the Kimek world of <planet>, then land back there."
+	source "Double Haze"
+	to offer
+		has "Heliarch Start 4: done"
+	on offer
+		conversation
+			`You drop off Iekie's agents, who quickly disperse throughout the spaceport in small teams. Before stepping out of your ship, Potub asks you to stay alert, and prepare for Iekie's next set of orders later on in the day.`
+			`	<origin> is far less populous than both the Kimek homeworld and Fourth Shadow, so both you and the local Heliarchs are much more at ease with dealing with the inevitable turmoil and ripples of both the Lunarium broadcast, and the more recent footage of their attack in Saryd space. Compared to the endless masses you had been dealing with, the scattered few troublesome civilians aren't nearly as difficult, and the local spaceport reminds you of the usual calm an orderly state of Coalition worlds. Freighters and transport ships land and depart, and the daily business here seems to be mostly unaffected by the current state of affairs.`
+			`	Speaking with some of the Heliarch agents stationed here, you notice they are much sharper and willing to directly tackle handling the fallout of the broadcast than their counterparts in Ki Patek Ka and Fourth Shadow. You also learn that nearly half of them are soon to be shipped of to those very planets.`
+			`	By nightfall, civilian traffic has gone down significantly, both in terms of pedestrians and the flux of spaceships. Having just sat down for a meal, your attention shifts to your comms and media channels. They are out. All speakers have gone silent, and the screens have gone dark. Leaving your ship after trying and failing to reset your systems, many more Heliarchs find you and report the same has happened in their own vessels, and across the spaceport shops and workstations.`
+			`	You all turn your attention to an Arach Heliarch in the distance, running towards you. As she comes closer, you recognize her as Potub, and she seems to be shouting some form of command. Once she's closed in more distance, the Arachi around you tense up, and echo her message just as your own translator picks it up. "Under attack, we are! Launch!"`
+			`	The group quickly scatters, each heading to their own ship, and you likewise make a run for the <ship>, readying it and departing as fast as you can...`
+				launch
+	npc accompany
+		government "Heliarch"
+		personality escort disables heroic
+		fleet
+			names
+			variant
+				
+	npc
+		government "Heliarch"
+		personality disables staying heroic
+		system "4 Summer Rising"
+		fleet
+			names
+			variant
+				
+	npc evade
+		government "Lunarium"
+		personality staying heroic
+		system "4 Summer Rising"
+		fleet
+			names
+			variant
+				
+	on visit
+		dialog `There are still Lunarium ships patrolling overhead. Staying on <planet> while your allies are dying in orbit would be a very bad idea.`
+	on complete
+		
+		conversation
+			`By the time you have returned, a substantial crowd has gathered on <origin>'s spaceport, with both eager and worried looks about the battle that took place over their world. Heliarch ground agents dissuade the civilians from being too disruptive, and Potub is quick to locate you.`
+			`	"Good work, everyone! Prevented have you another Lunarium raid, and ensured that perform another disgraceful attack like that on Ceaseless Toil, they could not!" She congratulates you and the other Heliarch captains, just loud enough for the civilian crowd to share in the sentiment of victory. While the other Heliarchs go on about tending to their ships, or trying to help the ground agents disperse the crowds, Potub comes closer to address you specifically. "Still dark, our comms are, so updates I have not from Consul Iekie, or other segments of the Coalition. By our technicians' estimates, back should our access be within a few hours. Alert you must be, Captain, for another wave of ships, the enemy may send... Meet me you should within the spaceport, once restored, our communication systems are. In the meantime, rest, if you can."`
+			`	She heads off into the spaceport, and you head back inside the <ship>.`
+
+
+mission "Heliarch Start 6"
+	name "Meet with Consul Plortub"
+	description "Head to the <planet> and meet with Consul Plortub to discuss the aftermath of the Lunarium attacks."
+	source "Double Haze"
+	destination "Ring of Power"
+	to offer
+		has "Heliarch Start 5: done"
+	on offer
+		conversation
+			`With the communication systems of <origin> back to normal, you make for the spaceport to meet with Potub. Monitors and audio channels throughout the facilities are all reporting about the battle, with both civilians and Heliarchs alike seem ensnared by the news, eagerly watching and listening.`
+			`	You find Potup just outside a Heliarch station, and she beckons you inside. "Changed, the plans have. Head to the <destination> you must. Summoned were you by the consuls. To meet with Consul Plortub, you are."`
+			`	She seems hesitant, taking glances outside, and then to the other Heliarchs in the room. "Not broadcast officially yet, it has been, but... another attack there was. Well, a series of attacks, really, even another one in Saryd space, in the Fallen Leaf system. The most important one, however, a raid on Delve of Bloptab was. Stolen much of the stockpiled materials, the Lunarium has."`
+			`	A screen comes alive, and a Kimek by it simply says "Consul Iekie". Potub is quick to say goodbye, and prepares for Iekie's next orders, while you leave the building, and prepare for a flight to the <planet>.`
+			label accept
+			`	`
+				accept
+	on complete
+		conversation
+			``
