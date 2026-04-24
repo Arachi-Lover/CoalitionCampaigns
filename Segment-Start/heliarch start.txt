@@ -331,12 +331,61 @@ mission "Heliarch Start 6"
 	on offer
 		conversation
 			`With the communication systems of <origin> back to normal, you make for the spaceport to meet with Potub. Monitors and audio channels throughout the facilities are all reporting about the battle, with both civilians and Heliarchs alike seem ensnared by the news, eagerly watching and listening.`
-			`	You find Potup just outside a Heliarch station, and she beckons you inside. "Changed, the plans have. Head to the <destination> you must. Summoned were you by the consuls. To meet with Consul Plortub, you are."`
+			`	You find Potub just outside a Heliarch station, and she beckons you inside. "Changed, the plans have. Head to the <destination> you must. Summoned were you by the consuls. To meet with Consul Plortub, you are."`
 			`	She seems hesitant, taking glances outside, and then to the other Heliarchs in the room. "Not broadcast officially yet, it has been, but... another attack there was. Well, a series of attacks, really, even another one in Saryd space, in the Fallen Leaf system. The most important one, however, a raid on Delve of Bloptab was. Stolen much of the stockpiled materials, the Lunarium has."`
 			`	A screen comes alive, and a Kimek by it simply says "Consul Iekie". Potub is quick to say goodbye, and prepares for Iekie's next orders, while you leave the building, and prepare for a flight to the <planet>.`
-			label accept
-			`	`
 				accept
 	on complete
 		conversation
+			`The <planet> is admittedly in a much better state than its complete sibling, the Ring of Friendship, when you arrived to meet with the entire council there. Nevertheless, for a military-first installation, especially a Heliarch one, the mood here is one of uncertainty.`
+			`	You are approached by some aides of Consul Plortub shortly after you land, and they guide you into the depths of the restricted hallways, into a large conference room, where the consul himself is presenting the situation over a holographic projection of Arach space, observed by dozens of arbiters and some other consuls of the Heliarch military.`
+			`	"Captain <last>!" Plortub exclaims once he spots you. "Please, join us you must." You take your seat, and he continues. "Catch you up I shall... After the raids on Ceaseless Toil, anticipate we did an attack over other key targets in Saryd space. Not amongst our top most likely targets, the Fallen Leaf system was... Not of much use militarily, to us or our enemies, it can be." He looks hesitantly at the gathered consuls before continuing. "Not as closely monitored, it was, and lightly guarded... But a dead end, it is. And easily capture the enemies, we would have, if not for..." He progresses with the hologram, which zooms in on the Fallen Leaf system. Dozens of Lunarium ships are shown looting the defeated Heliarch ships, then destroying them. Then, right as a huge back-up fleet arrives to crush the rebel fleet, the Lunarium ships one by one is enveloped by waves of blue energy, disappearing.`
+			`	A commotion takes hold of the room as everyone realizes what happened. "Jump Drives? How? Impossible that is!" One Saryd consul stands up in shock. "Not only found, but raided as well, the Fortress was?"`
+			`	All other consuls stare at her in unison, with glares that seems to paralyze the room.`
+			`	"No." Is all Plortub says, his voice now taking a decisivie tone, before continuing as he usually speaks. "A decoy operation, all of the Saryd attacks were. Evident that now is. Their real target, the surplus ore and processed alloys kept in our warehouses on Delve of Bloptab were." The projection shifts again, now showing the Lunarium ships defeating the scattered Heliarch ships that happened to be in the Bloptab system at the time. "Stolen, raw material for the assembly of over twenty Punishers was." The hologram dies out. "The last of what was recorded, that was. Much like in other attacks, completely out, our comms were, both in Fallen Leaf and in Bloptab..."`
+			`	"Led like cattle, our fleets were... Fooled! Humiliated, we have been!" One of the Kimek consuls laments. "Drag us down for this, the lobbies of Friendship and Wisdom will..."`
+			`	"Agreed. Which is why our top priority now, I propose the locating and recovery of that material we make. Blockading Arach space via the Ekuarik, my personal fleet is, and orders we must issue to engage any and all unknown ships using Jump Drives." The consuls debate briefly, agreeing to his plan. "Personally investigate Bloptab, I shall. Captain <last>, await me in the spaceport. Once finished here, I am, board your ship for the trip, I will."`
+			`	The same Kimek consul turns to you, intrigued. "Heard we have that help stop another of these distraction raids, you have. Tell us, Captain, when cut off the comms were, what happened?"`
+			`	You give your best retelling of the events of the battle over <origin>, detailing how all access to anything outside the system seemingly vanished in a blink, and the Lunarium fleet showed up shortly after. Once they are satisfied, the consuls dismiss you, everyone saluting briefly before you are escorted back out of the room, through the corridors and back to your ship, while Plortub remains discussing matters with the other consuls.`
+
+
+mission "Heliarch Start 7"
+	name "Take Consul Plortub to <planet>."
+	description "Take Consul Plortub to <destination>, where he will lead the efforts to locate and recover the stolen ores and alloys."
+	source "Ring of Power"
+	destination "Delve of Bloptab"
+	to offer
+		has "Heliarch Start 6: done"
+	passengers 1
+	blocked `You have reached <origin>'s spaceport, but you need <capacity> in order to take on the next mission. Return here when you have the required space free.`
+	on offer
+		conversation
+			`Waiting for Plortub in the spaceport, you see one of the consuls from the earlier meeting emerge from the restricted sections, and move straight toward a docked ship, which departs shortly after. Another one comes some minutes later, and then another. After what must have been the entire conference room has already left the <origin>, finally you spot Consul Plortub approaching the spaceport.`
+			`	You flag him down, and he gestures to the ships docked here, meaning for you two to head to your ship. As you meet up, he starts explaining the operation. "Normally go with my own ship, I would, but assigned it to the blockade in Ekuarik I have. Need every ship there, we do. Meet with the local Heliarch arbiters of <planet>, I shall, and inquire about what information we might have from the Lunarium raids. Captured, none of them were, but conduct brief ground proceedings still, they had to. Perhaps caught some hint, some snippet of their agents' communications, a camera or recorder might have..."`
+			`	He finishes as you reach your ship's cockpit - he explains he much prefers it to staying in a bunk, and so will only ever move there to sleep. "Before we move to <destination>, congratulate and thank you I must, Captain, for your actions in the battle. A major military or industrial world, Double Haze is not, but important, such victories are, to show the people and our troops that defending the Coalition, we still are. Assure you I do, get to the bottom of these attacks I will. Now, any questions have you, before for <planet> we leave."`
+			choice
+				`	"No, I'm ready to go."`
+					goto accept
+				`	"What was that about a 'Fortress' that one of the other consuls mentioned?"`
+			`	While he doesn't make any sound in doing it, Plortub's body shifts slightly at your question, as if he was distancing his face from you.`
+			`	"Pay it no mind, Captain. Classified information, not meant for non-consuls to know of. A slip-up by Consul Vedata, it was... At any rate, head to <planet> now, we really must."`
+			label accept
+			`	With the consul beside you, you set a course for <destination>, and prepare to depart.`
+				accept
+
+
+mission "Heliarch Start 8"
+	landing
+	name "Meet with Consul Iekie"
+	description "Head to the <planet> and meet with Consul Iekie."
+	source "Delve of Bloptab"
+	destination "Ring of Friendship"
+	to offer
+		has "Heliarch Start 7: done"
+	on offer
+		conversation
 			``
+			`	`
+			`	`
+			`	`
+				accept
