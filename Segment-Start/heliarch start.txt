@@ -274,7 +274,7 @@ mission "Heliarch Start 4"
 
 mission "Heliarch Start 5"
 	landing
-	name "Defend Double Haze"
+	name "Defend <planet>"
 	description "Defeat the Lunarium forces attacking the Kimek world of <planet>, then land back there."
 	source "Double Haze"
 	to offer
@@ -314,7 +314,6 @@ mission "Heliarch Start 5"
 	on visit
 		dialog `There are still Lunarium ships patrolling overhead. Staying on <planet> while your allies are dying in orbit would be a very bad idea.`
 	on complete
-		
 		conversation
 			`By the time you have returned, a substantial crowd has gathered on <origin>'s spaceport, with both eager and worried looks about the battle that took place over their world. Heliarch ground agents dissuade the civilians from being too disruptive, and Potub is quick to locate you.`
 			`	"Good work, everyone! Prevented have you another Lunarium raid, and ensured that perform another disgraceful attack like that on Ceaseless Toil, they could not!" She congratulates you and the other Heliarch captains, just loud enough for the civilian crowd to share in the sentiment of victory. While the other Heliarchs go on about tending to their ships, or trying to help the ground agents disperse the crowds, Potub comes closer to address you specifically. "Still dark, our comms are, so updates I have not from Consul Iekie, or other segments of the Coalition. By our technicians' estimates, back should our access be within a few hours. Alert you must be, Captain, for another wave of ships, the enemy may send... Meet me you should within the spaceport, once restored, our communication systems are. In the meantime, rest, if you can."`
@@ -384,8 +383,412 @@ mission "Heliarch Start 8"
 		has "Heliarch Start 7: done"
 	on offer
 		conversation
+			`Even before Plortub came here, it seems to local Heliarchs are already conducting a planet-wide search on any leftover ships of the Lunarium that might not have managed to make off with the stolen material. Dozens of warships are crowding the skies of <origin>, now outnumbering the cargo freighters that usually are bringing in a constant influx of raw ore from this planet's sibling, and flying away loaded to the brim with heavy materials and alloys.`
+			`	Plortub voices in on your comms, talking with the spaceport authorities briefly. Upon realizing a Heliarch consul is aboard your ship, all traffic is directed to make way for the <ship> to land on one of the premium landing pads, which is vacated by an Arach Hulk as you begin your approach.`
+			`	You open your hatch to find a delegation of local Heliarch authorities - nearly all of them arbiters, the second highest Heliarch rank - waiting for you. "Planetary governors." Plortub comments as you two begin descending the hatch of the <ship>. "Politically-able, brilliant minds, I am sure they are. But a terrible blunder, this has been, one that forever bar them from elevation to consul, or worse, even warrant demotions, it is. Shape them back into a unified working group, I must."`
+			`	Most of the arbiters here are Arachi, with a few stray Kimek. They only briefly greet you and Plortub, before they line up to present their findings to the consul, not even waiting for you all to arrive to the meeting room they arranged for this. While they seem earnest to give their best leads on what happened and how to find the Lunarium thieves and the stolen material, the pace at which the Arachi and Kimek arbiters switch places with one another to give their own accounts, and complement one another's statements, renders your translator quite clueless.`
+			`	Plortub has his own translator giving him the Kimek's accounts, while he listens to his fellow Arachi. He waits for all of them to finish, before asking a few short questions on the amount of cargo that was stolen from each warehouse, and where the attacks and raids were concentrated. Once he is satisfied with the answers, he turns to you. "Bother you for your ship again, I must, Captain. Take us to the principal warehouse, just north of the planet's equator, could you?" You nod, and he gestures for the Heliarch arbiters to follow. They all board your ship, and you are quick to bring them to the coordinates they point you to, landing on the rocky soil just over 100 meters away from the warehouse complex, as the Lunarium attacks seem to have destroyed all the landing pads in the area.`
+			`	Once there, Plortub is guided through the site, and notes on the damage marks over some of the complex's auxiliary structures. The main warehouses themselves are in pristine condition, but of course, completely empty. He is just about to ask the arbiters another question, when his circlet faintly beeps. He seems to accept a call, and after listening for a moment, turns to look over at you and the arbiters. "Very well." Is all he says before the call ends. "Captain <last>, required on the <planet>, you are. Consul Iekie has need of your services once more - or rather, stolen you from her, it seems I had." He says in anything but a joking tone. "Call for a ship, so that leave here with it we can, once done we are." He tells one of the arbiters, who starts fiddling with a communicator to call down one of the various Punishers flying over the planet at the moment.`
+			`	Seeing as Plortub no longer has anything for you at the moment, you return to the <ship> and fly it back to the main spaceport of <origin>, preparing for the meeting with Consul Iekie on the <planet>.`
+				accept
+
+
+mission "Heliarch Start 9"
+	landing
+	name "Battle of <system>"
+	description "Join the Heliarch forces mounting in <system> and defeat the ambushed Lunarium fleet there. When the battle is over, meet with Magister Lotuora on <planet>."
+	source "Ring of Friendship"
+	destination "Deep Treasure"
+	to offer
+		has "Heliarch Start 8: done"
+	on offer
+		conversation
+			`On your flight approach to the <origin>, you are guided to a landing bay right beside a docked Heliarch Punisher. Consul Iekie is waiting for you when you step down the hatch, and gives the signal to the crew of said Punisher to prepare for takeoff.`
+			`	"Captain <last>! Apologize I must for the short notice summons. Suspect we do that intercepting our hyperlane messages, the Lunarium is... Investigating it with the aid of House Bebliss, we are. At any rate, a most unique journey I propose we now make. Headed to-"`
+			`	Her circlet, alongside every single other high-ranking Heliarch in the <origin>, and the very alarm systems of the ringworld itself, seem to beep in unison. Iekie freezes still.`
+			`	"Cornered in <system>, a Lunarium fleet has! Continue later we can, head there immediately, help our forces subdue them!" She hurries off and starts communicating with many other Heliarch captains, issuing the same orders to them. Many warships around you begin taking off, and you board the <ship> again to prepare for a fight.`
+			`	You glance at your comms seconds before your ship is back out in the void, and see you have received a message from Consul Aulori, telling you to meet up with Magister Lotuora on <planet> once the battle is over.`
+				launch
+	npc accompany
+		government "Heliarch"
+		personality escort disables heroic
+		fleet
+			names
+			variant
+				
+	npc
+		government "Heliarch"
+		personality disables staying heroic
+		system "Silver Bell"
+		fleet
+			names
+			variant
+				
+	npc evade
+		government "Lunarium"
+		personality staying heroic
+		system "Silver Bell"
+		fleet
+			names
+			variant
+				
+	on visit
+		dialog `There are still Lunarium ships patrolling overhead. Staying on <planet> while your allies are dying in orbit would be a very bad idea.`
+	on complete
+		conversation
+			`A Heliarch Judicator lands beside the <ship>. When you step down the hatch, you are met by its joyful Saryd captain, Magister Lotuora. "A fine battle it was, Captain! Hope I do that suffered you have no serious damage?"`
+			choice
+				`	"Not at all, the <ship> is tougher than it seems."`
+				`	"I'll need to get some new hull plates, but the <ship> should be as good as new by tomorrow."`
+			`	She smiles, and looks out to the sea. "Lucky I was myself, in truth. Bringing back I was some sensitive compounds for Consul Aulori, but ambushed we were, right as we entered Silver Bell. Heavily damaged, the other Judicator in my fleet was. All we could do, retreating to here was, but wrecked that ship, the Lunarium did all the same..." She breathes deeply, then reaches out her hands to clap you on the shoulders. "A real savior, you are! You and all the reinforcements from the rings!"`
+			`	The sound of the waves crashing against the base of the local spaceport mixes with the engine flares of arriving Heliarch ships, and the repair workers here getting to patching them all up after the battle.`
+			`"Well, faith I have that lost, the cargo was not. Recovered in a few hours, the wreckage of the Judicator should be. Only, the space for any more of the compounds, my ship has not, so enlist I must your aid, Captain."`
+			choice
+				`	"Of course, how much space should I reserve in my cargo hold?"`
+				`	"Consul Aulori contacted me before I came here, I believe that's the reason."`
+			`	She nods. "Tightly sealed, the compounds were, so lost, nothing should have been. Prepared for some 40 tons of cargo, you should be. Meet me in the spaceport later, would you?" You agree, and she heads off to mingle with the other arriving Heliarch captains to celebrate.`
+
+
+mission "Heliarch Start 10"
+	name "Sensitive Compounds Transport"
+	description "Help Lotuora bring the <cargo> to the <planet>."
+	cargo "sensitive compounds" 40
+	blocked "You need <capacity> in order to take on the next mission. Return here when you have the required space free."
+	source "Deep Treasure"
+	destination "Ring of Wisdom"
+	to offer
+		has "Heliarch Start 9: done"
+	on offer
+		conversation
+			`You find Lotuora revelling with a crowd in a spaceport bar, where they are celebrating the local victory over the Lunarium. She spots you, and after saying her goodbyes to everyone, gestures for you to follow her to where your ships are landed.`
+			`	"Safe and sound the cargo was! Fully recovered it the local marine forces did, just a few hours ago." She uses a comms device to call a team responsible for the cargo, and has them bring them to your ship. After some time swapping stories with Lotuora regarding what you've been doing so far ever since the Lunarium declared war, and listening to her new jokes she learned in the local bar, a squadron of Heliarch agents arrive, with over a dozen large, thick cylindrical containers.`
+			`	After they load the cargo into your ship, you and Lotuora thank them for their help, and she asks you to set a course for the <destination>. "Waiting for us, Consul Aulori must be. Follow your lead I will, chat again face-to-face on the ring we shall, yeah?" She smiles, and boards her flagship.`
+				accept
+	npc accompany save
+		personality escort heroic opportunistic
+		government "Heliarch"
+		fleet
+			fighters
+				names "heliarch fighter"
+			variant
+				"Heliarch Judicator" "Joyous Guardian"
+				"Heliarch Pursuer" 2
+				"Heliarch Rover" 2
+				"Heliarch Stalker" 2
+	on visit
+		dialog `You have reached the <planet>, but you left Lotuora's ship behind. Better depart and wait for her to get here.`
+
+
+mission "Heliarch Start 11"
+	landing
+	name "Unfinished Business"
+	description "Head to the <planet>, where Consul Iekie is waiting for you with an important mission."
+	source "Ring of Wisdom"
+	destination "Ring of Friendship"
+	to offer
+		has "Heliarch Start 10: done"
+	on offer
+		conversation
+			`You meet up with Lotuora after you two dock on the <origin>, and you two watch over the process as the local spaceport Heliarch workers unload the containers, and bring it onto various carts, which they promptly begin shipping deeper into the ring.`
+			`	Once the last of the cargo has been taken out, Lotuora guides you to the restricted sections of the ring. After passing through a pair of chokepoints, you reach a deep research vault where dozens of Heliarchs are busy at work over a myriad of projects. At the far end of the room, by a wall with nothing but control panels and monitor screens, you two find Consul Aulori. He acknowledges you two with a glance, and speaks a few quick words to a Kimek who he was conversing with to dismiss her.`
+			`	"Magister, Captain." He says, turning to you both. "Trust I do that intact, all the compound samples are?"`
+			`	"Yes Consul, lost a ship I have, but saved by the Captain here, and the others who came to our rescue, all the cargo was." Lotuora proclaims in a happy tone, as she taps you on the shoulder. "A dent or two, some of the cylinders might have, but compromised, the inner volume walls were not."`
+			`	Aulori nods, and looks to you. "Good it was that swept away by Iekie's whims again, you were not. Set back years, we would have been, if ruined the samples, that attack over Silver String had."`
+			choice
+				`	"Just what was so important about this cargo Lotuora was bringing here?"`
+					goto cargo
+				`	"What do you mean by Iekie's whims?"`
+			`	He sighs. "True it is that absolute certainty of what she desires from you, I have not. But, an educated guess I might make. A poor political stunt, unlikely to produce the hoped effect it is, and as I see it a horrid misuse of your qualities. But, all the same, well within her rights as consul, she is, to require you..."`
+				goto end
+			label cargo
+			`	He looks to one of the monitors on the wall, and a projection of Periaxle Circuit, the miniature ringworld made by the Saryds, comes to life. "Sought to complement our arsenal for the event of a Quarg counterattack, for centuries now we have. For that, employ we do the full power of the particle accelerator on Periaxle Circuit. Nearly ready for production, some of these weapons are, and one in particular, deemed implausible by my predecessors... Well, delicate, it's mechanisms are. A breakthrough, we had, and vital for proceeding with its development, the samples were."`
+			label end
+			`	Aulori takes a puzzled look once your translator finishes relaying to you what he said, but is just then approached by another Saryd, bringing word of another research project. "Well, all for now that will be, Captain <last>. Commend you I must for the help." He ponders the room. "Now, steal you from Iekie for any longer, I shall not. Meet her you should on the <planet>. Magister Lotuora, stay a while longer you should."`
+			`	You bid Lotuora and the consul farewell, and head back the way you came. Once you're back in the <ship>, you set a course for <system>, and prepare to meet with Consul Iekie again.`
+				accept
+	on complete
+		conversation
+			`You go to notify one of the first Heliarchs you see regarding your meeting with Consul Iekie, but one of her own agents seems to find you first. They notify her, and within a few seconds your circlet beeps faintly with a call from the consul. You accept, and hear her greeting you from your translator box.`
+			`	"Captain <last>! Unable to receive you in person, I was. Finish I must some final preparations. Ensuring I am that no further interruptions, we shall have. Wait in the spaceport, you may. Meet you there withn the hour, I shall."`
+			`	With that, she signs out.`
+
+
+mission "Heliarch Start 12"
+	name "Diplomatic Preparations"
+	description "Escort Consule Iekie's ship to <planet>, where she will make final preparations before a diplomatic mission to human space."
+	source "Ring of Friendship"
+	destination "Ablub's Invention"
+	to offer
+		has "Heliarch Start 11: done"
+	on offer
+		conversation
+			`While still not as orderly as before the Lunarium's war declaration, the spaceport of the <origin> seems to be well on its way to returning to normalcy. Civilian facilities and shops have opened for business again, and while the sheer volume of Heliarch troops around hasn't diminished much, if at all, since the council meeting, they are managing to move around the ring without too much trouble or jams in pedestrian traffic.`
+			`	You get yourself a snack on one of the open restaurants while waiting for Iekie, and catch the local news. One Saryd consul, responsible for several administrative and governmental actions, is urging for volunteers to remain calm and return to the construction efforts not just here, but on all three Heliarch rings. A lobby from the Ring of Power, meanwhile, is announcing the approval for defense fleets exclusive to the Saryd factory worlds of Ceaseless Toil and Diligent Hand, "to against any further terror attacks, safeguard" one of them says.`
+			`	Just as a report about the recent battle over Silver String begins, you hear a scurrying of many legs coming your way, and turn to see Consul Iekie.`
+			`	"Captain <last>! Accompany me, would you?" She guides you back to the landing pads, and into a Heliarch Punisher docked beside the <ship>. The hatch is guarded by a squad of Saryds in full body armor, sporting the Heliarch's signature blaster cannons. Three of them follow you and Iekie into the Punisher, and close the hatch behind you. The consul then guides you to a small room that seems to be a repurposed bunk, with only a simple table and seating arrangements for any of the Coalition species.`
+			`	Iekie offers you a seat, and takes the one opposite to yours. "Now, behind schedule as is, we are, so brief I shall be. Fought the Lunarium terrorists multiple times now, you have. Noticed, you must have, that equipped with human weaponry and outfits, their ships are?" You nod, and she proceeds. "Suspect we do that interferring, an old enemy of yours - of humanity - is. Correct I am that battled against the 'Alpha' in a recent conflict in human space, you have?" You confirm once again, recounting your efforts against the Alphas during the war. "Well. Our suspects, they are. And so, your escort for a diplomatic mission, I require, so that better inform ourselves of our circumstances and prospects, the Heliarchy can."`
+			choice
+				`	"Where are we headed to?"`
+				`	"Why do you think the Alphas are behind this?"`
+			`	"Many decades ago, established by my predecessor, a diplomatic channel with the human world of 'Poisonwood' was. A small colony at first, but facilitate our communication, the proximity to Coalition borders did. Vehemently prohibited, any and all expeditions to the outside of our Coalition were, and still are, so that at risk of losing our few remaining Jump Drives, we are not. But, an exception, for Poisonwood was made." She produces a small screen, showing you the map of the Coalition, and the Graffias system. A video plays briefly, showing many round trips to and from Poisonwood. "In truth, a simple but very amicable trade deal, we have maintained. Every few years, send we do one Punisher, filled with aid supplies and whatever the planet may require. In return, only for information do we ask. Much to observe and learn, the enviable scope of humanity's territory provides. Taught us much about the Alphas, the Quarg, and other ongoing events within human space, the governing body of Poisonwood has." She sighs. "Learn of the planet's subjugation, and later liberation, only upon a later visit we did, so failed we have to aid them in their time of need. In spite of that, a valuable ally, they have remained."`
+			label questions
+			choice
+				`	"Why is Poisonwood an exception to your ban on expeditions to the outside?"`
+					to display
+						not "heliarch poisonwood: exception"
+					goto exception
+				`	"How did the Heliarchy learn of the Alphas?"`
+					to display
+						not "heliarch poisonwood: alphas"
+					goto alphas
+				`	"So, are we going to Poisonwood now?"`
+					goto end
+			label exception
+			action
+				set "heliarch poisonwood: exception"
+			branch "expeditions past"
+				has "Coalition: Expeditions Past 10: done"
+			`	"A delicate subject, such expeditions are... To deeply wander into foreign stars, too risky it has proven. Only a limited amount of Jump Drives remaining, we have, and forever stranded, without them we would become. Trapped in our cages once more..." She mulls over for a moment. "But, on a neighboring system, a mere jump away, Poisonwood is. Considered expeditions, our visits there are not."`
+				goto questions
+			label "expeditions past"
+			`	"While safely returned from her own expedition, Arbiter Sedlitaris has - in great part thanks to your own assistance, Captain - for centuries, lost forever, all expeditionary fleets, and their Jump Drives, were. Reassessed the prohibition we have not yet, in light of this latest success, and with the war no time have we for such notions. But the reason, in principle,  Poisonwood's proximity is. A mere jump away from our borders, considered expeditions, our visits there are not."`
+				goto questions
+			label alphas
+			action
+				set "heliarch poisonwood: alphas"
+			branch "met athis"
+				has "Coalition: Alpha Encounter: offered"
+			`	She collects her thoughts for a few seconds. "A surprise this may be, but the first human to visit us, you are not. In loose terms, at least. First found by an Alpha, centuries ago, we were. Fleeing from war in human space, he was, and though under vigilance he still remains, found refuge in our Coalition, he has." She pauses, fiddling with her translation box. "Contributed he has a great deal in our communication efforts as well, with a wholly new language group for our translators."`
+				goto questions
+			label "met athis"
+			`	She shifts in her seat ever so slightly. "Acquainted I believe you are with our guest, Alitis? Or Athis, in your language. An Alpha, who in fleeing a war in human space, our Coalition found. While under constant vigilance, a refuge, we have provided him. Our first visitor from humanity, and one who much contributed to our translation efforts."`
+				goto questions
+			label end
+			action
+				clear "heliarch poisonwood: exception"
+				clear "heliarch poisonwood: alphas"
+			`	She signals against it. "Not yet. Standard procedure for such visits, preparations on <planet> are. Escort my ship there, you will, so that properly configured and prepared, in the event of any accidents or attacks, our relay pylons are."`
+			`	She shifts the screen to show you a route to <destination>, and explains where you two will land so that House Idriss, along with the local Heliarchs, can configure her ship accordingly. She will also fill up the Punisher's cargo hold with the aid cargo to Poisonwood. After she is done with her explanations, she guides you back to the hatch, which is opened by the armored Saryd guards, and tells you she will follow your lead once you depart.`
+				accept
+	npc accompany save
+		personality escort heroic opportunistic
+		government "Heliarch"
+		ship "Heliarch Punisher" "Timely Visitor"
+	on visit
+		dialog `You have reached the <planet>, but you left Iekie's ship behind. Better depart and wait for her to get here.`
+
+
+mission "Heliarch Start 13"
+	name "Visit Poisonwood"
+	description "Escort Consule Iekie's ship to <planet>, to meet with the governor and try to learn how the Lunarium are obtaining human equipment."
+	source "Ablub's Invention"
+	destination "Poisonwood"
+	to offer
+		has "Heliarch Start 12: done"
+	on offer
+		conversation
+			`Flying down the skies of <planet>, your ship and Iekie's Punisher are soon joined by no fewer than twelve more Heliarch warships, who escort the two of you to an isolated region of the planet, where a lone, snowy mountain overlooks a cube-like plateau. All ships land on the plateau, and a swarm of armed Heliarchs disembark from the warships that followed you, taking a perimeter around the warehouse complex besides the ships. Half the ships then immediately launch again, and start circling the plateau and complex.`
+			`	Iekie steps down from her Punisher shortly after you've set foot on the plateau yourself, and comes to meet you. "Work on my ship for a few hours, the specialists here will." She gestures to a line of engineers and other workers making their way from the warehouse, and toward her Punisher, bringing along carts of tools, sealed containers and large components.`
+			choice
+				`	"With all these warships around, I'm surprised you even needed me to escort your ship at all."`
+				`	"I take it you are worried about a Lunarium attack, now that you left the rings?"`
+			`	Sbe clicks rapidly with her mouth, turning her head down. "Not for me, they are." She looks around to the ships. "Much more valuable, the Jump Drive they are guarding is."`
+			`	When the workers exist Iekie's Punisher, they head to the one other Punisher that is landed here, directly opposed to Iekie's, and enter its cargo hold. They exit a minute later, hurriedly bringing along a large, reinforced titanium container, and in the blink of an eye bring it into her own warship. The opposing Punisher takes off, and begins circling the complex in patrol as well. Not five minutes after they went in, the workers come back out, this time tugging along a cart carrying a Hyperdrive, back into the warehouses.`
+			`	Iekie sighs in relief. "Well then, to the spaceport, yes?"`
+			choice
+				`	"That has got to be a record in reoutfitting speed they just set."`
+				`	"Why go through all of this for swapping in a Jump Drive?"`
+					goto why
+			`	You hear her clicking again. "Yes, thankfully very swift, the experts here are." She looks to the warehouses, then back at you.`
+			label why
+			`	"Precious few Jump Drives to call our own do we have, Captain. A scarce count, given by the very Quarg, to the Saryds of old. And what from their own warships loot we managed." She starts walking toward her own ship. "Lost too many, we already have. Standfastly guard those that remain, we must, or caged once more, we shall be."`
+			`	She boards the <npc>, and you go back in the <ship>. You follow Iekie's lead back to the main spaceport city (followed by the Heliarch fleet, of course), and land beside her. Spaceport workers load her ship with the aid supplies that will be given to Poisonwood, and Iekie contacts you again, saying she will follow your ship once you depart.`
+				accept
+	npc accompany save
+		personality escort heroic opportunistic
+		government "Heliarch"
+		ship "Heliarch Punisher (Fuel)" "Timely Visitor"
+	on visit
+		dialog `You have reached the <planet>, but you left Iekie's ship behind. Better depart and wait for her to get here.`
+	on complete
+		conversation
+			`You receive a call from Iekie as you are coming down <origin>'s atmosphere. "Avoid the main spaceport, we must. Follow me." You move through one of the planet's arid regions, towards a large rock formation. The <npc> slows down almost to a halt when approaching the rocks from the side, as if looking for a signal. Finally, Iekie finds an opening large enough for your ships, leading you into a cavernous chamber, with serpentine wires fixed around the inner walls, dotted by spotlights that come to life once they detect your movement. You see a handful of simple, sturdy barracks by one wall, and some control panels by another.`
+			`	You land on the simple pads here, and meet with Iekie. "Unwarranted attention, particularly from the criminals in this sector, the Poisonwood government sought to avoid, so construct this special meeting place for our dealings, they have." She explains. "Sent them I did an encrypted message, to signify our visit, but in case that failed it has..." She moves to the controls, which seem to have been designed for ease of use for both humans or any of the Coalition species, and inputs a few commands. "Now, wait, we do."`
+			`	About an hour later, you hear the flare of engines outside, and see an Argosy making its way into the chamber. It lands besides Iekie's Punisher, and down the hatch steps Poisonwood's governor, Metope Toxifera.`
+			`	She is greeted cordially by Iekie, and is surprised to see you. "We have met before... Captain <first> <last>, is that you?" She smiles and shakes your hand.`
+			# Add other choices according to which Human campaign is added, i.e. Navy/Republic, Syndicate.
+			choice
+				`	"I was here with Alondo Gruyere, during the war. We were on a diplomatic mission here."`
+					to display
+						has "FW Syndicate Diplomacy 1D: done"
+			`	She studies you up and down, focusing on the Heliarch circlet sitting on your head. "So, joined the Heliarchy, huh? How far you've come. The first human Heliarch ever, I believe, consul?" She asks.`
+			`	Consul Iekie is eager to confirm. "Indeed, governor. The first of many, I trust." She adds. "Glad I am that acquainted, the two of you are."`
+			`	Governor Metope chuckles, and turns back to you. "You've made quite a name for yourself then. The Coalition has been a great help, and always a welcome guest on our world. I dare say, other than the previous planetary governors, and the Heliarchs themselves, you're also the first to set foot in this hideout of ours. Now, you can be proud, but don't go telling everyone about this arrangement of ours."`
+			choice
+				`	"Don't worry, I won't say a word."`
+					goto end
+				`	"Wait, so does the Republic not know of the Coalition? Or about their visits here?"`
+			`	She shakes her head. "Honestly it was a lot to take in when I first became governor, and my predecessor revealed the Coalition and our dealings with them to me... I thought he was mad at first!" She laughs. "But the Republic already has too much on their plate, and the Heliarchs have been good to us, looking only for information. I can trust myself and my aides, and future governors to keep the secret. But every top level politician in Parliament? Their aides? The lobbyists they meet with? The spies that surround them? No, it would be an open secret within a week. And then..."`
+			`	"Know, the Quarg would." Iekie adds quietly. The governor nods.`
+			`	"We don't want to endanger our visitors, see?" She explains. "The Free Worlds are just as in the dark, I'm sure. Truth be told, even if I knew for sure no Quarg would hear a peep of this, I still would be cautious of letting this information out there, after the Pug invasion. And with the Alphas still prowling God knows where, I don't want to draw any attention to <planet>."`
+			label end
+			`	The two of them beckon you to follow them into one of the barracks, where everyone sits down to talk, with Metope on one end of the table, and Iekie on another, with you being seated on the side, between them. They both begin by setting up video and audio recordings for their own records of these meetings, which Metope explains are kept in the larger barrack opposite to this one. After official greetings are exchanged, Consul Iekie begins by indicating the Heliarchy and the Coalition as a whole once again reaffirms the friendship with <planet>, and the interest in continuing the collaboration efforts here. She also mentions the Heliarchy has sent a gift in the form of the Punisher's cargo, in the form of 94 tons of high-end medical machines, industrial components, and laboratory instruments, alongisde all their updated blueprints and manuals. There are also several tons of emergency rations, and other essential consumables.`
+			`	Governor Metope expresses her gratitude in the name of the people of <planet>, and in turn begins a simple presentation, showing via slides a timeline of what you quickly work out to be Quarg fleet movements over the past years. It seems they use public resources and websites to track ship movements in Tarazed and the neighboring systems, and simply relay that information to the Coalition, so that there is not espionage for the Quarg to suspect to begin with. Once that is done, she starts summarizing the most high-profile political ocurrences in human space over the same time period. Consul Iekie herself is deeply focused on the information, while many of her aides take notes simultaneously on her side of the table.`
+			`	Once Metope is done, she turns to you. "In this visit we also have another guest, one from closer to home." Her smile fades slowly. "If the hero of the Pug War has joined the Heliarchy, and has joined you in this visit, I suppose something has happened in the Coalition, Consul Iekie?"`
+			`	The question has the consul shift uncomfortably in her seat. She ponders her words carefully before speaking. "At war, we are." She begins by explaining the Lunarium's declaration of war, and the several terror attacks they have carried out since then. After mentioning how you have taken part in battling their fleets multiple times. Then she gets to how the Lunarium are using Coalition civilian ships, armed and outfitted with human equipment. The barracks remain silent once she finishes.`
+			`	"In short, looking we are for help, in understanding who supplying the criminals with human weapons, might be." Iekie speaks up.`
+			`	The governor nods. "It's possible the Alphas are behind it of course, though if I'm going to speculate, the Quarg or someone else are just as likely. I'll need to look into this in more detail to get you something more concrete."`
+			`	The two of them discuss the situation for a while longer, with Metope giving some rough ideas of who might have acess to Jump Drives in human space, and something to gain from arming a rebellion in the Coalition. They agree to meet up tomorrow, after the governor's team has researched what leads they have. Iekie remains in the chamber, while you escort the governor's Argosy back to the main spaceport. You land far from one another, but you get a message later telling you to meet up with the governor's aides in the spaceport after sunrise.`
+
+
+mission "Heliarch Start 14"
+	name "Early Return"
+	description "Escort Consule Iekie's ship to <planet>, to try and catch the Lunarium off-guard."
+	source "Poisonwood"
+	destination "Mebla's Portion"
+	to offer
+		has "Heliarch Start 13: done"
+	on offer
+		conversation
+			`You spend about an hour in the spaceport before one of the governor's aides meets you. They tell you her Argosy is ready for flight, and that she will follow you to the meeting point. You head back to the <ship> and lift off, and sure enough see her Argosy tailing you.`
+			`	After you two reach the chamber, and exit your ships to greet Iekie, you all head back to the meeting barracks.`
+			`	Governor Metope begins before even sitting down. "Right, so this is a question I have to make, even though I'm sure of the answer. You are certain that these terrorists have not stolen one of your own Jump Drives, in which case they could be acquiring equipment from human space on their own?"`
+			`	Consul Iekie rejects the notion. "Under most careful watch, and fiercely safeguarded, our Jump Drives are. Know of the whereabouts of each one, at all times, we do. In hundreds of years, lost no Jump Drive, have we. And of those lost, all outside of our Coalition, they were."`
+			`	Metope sighs. "I figured, it would have been too obvious not to notice." She produces a folder with various documents - which seem to have already been translated to the Coalition languages - alongside a backpack full of pen drives and data pads. "That leaves us out of easy explanations. Well, these are all we could find so far on weapons and equipment hauls that don't fall out of ordinary levels. Nominally, here in the South, we had large shipments of the newest Plasma Turret and Flamethrower models to a few Pirate warlords on Greenrock, and a lot of reactors and grenades brought over to the former CCOR systems." Iekie takes the paper documents, while her aides take the pen drives and data pads to analyze. They scan the information in silence, as the governor continues. "Pirates are known to work with the Alphas, so those two are our biggest suspects at the moment, as they are closest to the Coalition as well. Last in the South there's, well, the Quarg. But we have found nothing suspicious regarding these outfits going to or from Tarazed and its neighboring systems."`
+			`	Iekie finishes the page she is on before replying. "Any possibility is there that further away, their collaborators might have been? Toward the Syndicate, perhaps, or deeper north?"`
+			`	The governor shakes her head. "Not anything we've found so far. It always takes longer to get this type of information from within Syndicate territory, so we'll be working on that for a few more days. By tomorrow we should be clear on any prospects regarding the Deep - which I doubt will have anything to do with this - and the Far North systems."`
+			`	The consul's team takes a while to digest the information they have, and head back into the Punisher to discuss among themselves briefly. When they return, Iekie thanks the governor for her efforts thus far.`
+			`	"We'll keep looking into this, and I'll try to come back every day with what information we can find." Metope says.`
+			`	The consul, then seems to imitate the human gesture of shaking her head. "Necessary, that will not be. Returning to the Coalition today, we are." She declares, to the collective shock of even all of her own aides. "Officially here for at least a week, this visit should be. Of course, known of the visit itself and of its stipulated duration, the Lunarium might have. But no way have they of knowing that decided to return earlier, I have. Estimated another raid soon, on <destination>, the Ring of Power has. Head there to support the fleets in case of any such event, Captain <last> and I shall."`
+			`	Metope reasons with the consul's decision for a few seconds. "Very well, we wish you a safe journey back home then. On our end, we'll continue to look into who might be the Lunarium's suppliers. Should we expect you to come back soon?"`
+			`	Consul Iekie assents to that. "The exact date I cannot say, but return soon to discuss this again, I shall."`
+			`	With that, Metope extends her wishes for a safe journey to you as well, and boards her Argosy. Iekie counsels you to return to the main spaceport with her, and says she will follow your ship out of <origin> next time you depart. You fly back with governor Metope, and set an automatic message to be sent to Iekie next time the <ship> lifts off.`
+				accept
+	npc accompany save
+		personality escort heroic opportunistic
+		government "Heliarch"
+		ship "Heliarch Punisher (Fuel)" "Timely Visitor"
+	on visit
+		dialog `You have reached the <planet>, but you left Iekie's ship behind. Better depart and wait for her to get here.`
+
+
+mission "Heliarch Start 15"
+	landing
+	name "Defend <planet>"
+	description "Defeat the Lunarium forces attacking the Arach world of <planet>, then land back there."
+	source "Mebla's Portion"
+	to offer
+		has "Heliarch Start 14: done"
+	on offer
+		conversation
+			`Once you both disembark your ships, you meet Consul Iekie by the spaceport, where she swiftly finds one of her agents to inform her of what has happened. Apparently no other big attack by the Lunarium has happened so far, since you last left Coalition space, but the entire fleet is on alert waiting for their next attack.`
+			`	Iekie returns to her ship, using it as a mobile command center in case she is needed elsewhere. You stay in the spaceport for a while, watching more news broadcasts talking about the ongoing investigations to find the Lunarium, and instructions for civilians on how to report any lead they might have to the Heliarch authorities in their respective neighborhoods.`
+			`	As the endless downpour cascades on the spaceport ceiling and down the windows, the news piece that gets the most somber reaction of the local workers and civilian captains is the official announcement that the Coalition Games have been cancelled indefinetly, until the situation within the Coalition has been stabilized.`
+			`	It is almost midnight, when another news report is interrupted by a local alarm, warning of a large Lunarium fleet passing through, seemingly en route to the Blubipad system. All Heliarch captains here rush to their ships, and by the time you have made your way to the <ship> most of them have already exited the atmosphere.`
+			`	You are about to head up your hatch when you catch what looks like welding gear close to the landing support of Iekie's Punisher, beside your own ship.`
+			choice
+				`	(Investigate.)`
+					goto investigate
+				`	(Board your ship.)`
+			`	You step inside, and close your hatch. You are just about to lift off when the fuel storage tank closest to Iekie's Punisher bursts in flames, at the same time as a large chunk of the floor beneath her ship crumbles down, making it tilt to one side. Dozens of blasts follow the explosion, targetting the Punisher's hatch locks. It's shields go up shortly after, but not before a pair of explosives break up one of the main locks.`
+			`	Activating the shields on the <ship> as well, you lift off just enough so that you can hover around, and slam your ship toward the attackers, and then try to use your own ship to tilt the Heliarch warship back to a better position. You manage to stabilize it, and the instant they have a clear shot the turret operators of the Punisher open fire against the enemy.`
+			`	Alas, with the dark night and constant storms, and with much of the local forces having just departed, they scatter into nothing. You keep your ship supporting the Punisher, and step down the hatch to meet with Iekie and her crew (whose Saryds integrants are still visibly adjusting to being able to stand on even ground again.)`
+				goto end
+			label investigate
+			`	You move close to the landing support, and see much of it has seemingly been welded together just recently, without any clear functional purpose. Rather, it seems the components would now be incapable of retracting and operating as usual. You approach another one, and while it has no obvious equipment for it laying around, it has clearly suffered the same treatment.`
+			`	Just then, the fuel storage tank closest to Iekie's Punisher bursts in flames, at the same time as a large chunk of the floor beneath her ship crumbles down, making it tilt to one side. You were just steps away from the hole left in the floor, and manage to jump away just in time to avoid being crushed by the warship. Dozens of blasts follow the explosion, targetting the Punisher's hatch locks. It's shields go up shortly after, but not before a pair of explosives break up one of the main locks.`
+			`	You take cover behind some nearby cargo crates, and pull out your side-arm to fire back at the attackers. After a few moments, the hatch bursts open with Kimek and Arach troops firing a torrent of blasts of their own against the enemy.`
+			`	Alas, with the dark night and constant storms, and with much of the local forces having just departed, they scatter into nothing. The crewmembers thank you for your support, and one of them suggests you board your ship and nudge the Punisher with it, so that they can all leave via the hatch. You do as they suggest, and when you exit the <ship> again, you meet with Iekie and her crew (whose Saryds integrants are still visibly adjusting to being able to stand on even ground again.)`
+			label end
+			`	"Aware they must have been of my Jump Drive. An attack to seize it, no doubt this was." The consul says as her troops start patrolling around for any stragglers. You and Iekie inspect the Punisher's landing gear, welded so that it could not retract for departure, and in one supporting structure find a tiny tracking device. The crew removes it, and they begin inspecting the whole ship over. "Infiltrated the spaceport workerforce, they have. Damned thugs!" Iekie cries out, and orders for reinforcements to come and help protect the Punisher's Jump Drive, while her crew and local workers get the ship itself back in order.`
+			`	Not long after, she receives a ping via her circlet, and hastily looks to the skies. You get the message  yourself shortly after.`
+			`	"Lunarium ships sighted inbound. Trajectory to <origin>."`
+			`	Iekie barks an order for you and all the remaining captains here to get in your ships and defend the planet. You get back inside the <ship>, and depart for the battle...`
+				launch
+	npc accompany
+		government "Heliarch"
+		personality escort disables heroic
+		fleet
+			names
+			variant
+				
+	npc
+		government "Heliarch"
+		personality disables heroic
+		system "Belugt"
+		fleet
+			names
+			variant
+				
+	npc evade
+		government "Lunarium"
+		personality heroic
+		system "Ablodab"
+		fleet
+			names
+			variant
+				
+	npc evade entering
+		government "Lunarium"
+		personality heroic
+		fleet
+			names
+			variant
+				
+	npc evade
+		government "Lunarium"
+		personality staying heroic
+		system "Mebla"
+		fleet
+			names
+			variant
+	on visit
+		dialog `There are still Lunarium ships patrolling overhead. Staying on <planet> while your allies are dying in orbit would be a very bad idea.`
+	on complete
+		conversation
+			`When you land again, you find an exasperated Consul Iekie. "Headed to Blubipad, no fleet at all was. A lie. Merely a diversion." She shivers her legs closer to her body. "Another raid. On Market of Gupta, this time. Fled with the material, their cargo haulers have, while here the warships came to attack and try and steal the Jump Drive that employing, I am."`
+			`	Her Punisher seems to have been cleared out of any suspicious modifications. The ship itself shows no signs of serious damage, besides the busted hatch lock hit by the grenades, but many components that very well could have impeded its combat capabilities should it have tried to flee were found, and the spaceport is drowning in suspicion over whom amongst the workers here could have done this, and how they would have done so without any detection.`
+			`	Iekie remains silent for many minutes, and you are unsure if she is simply deep in thought, or if perhaps she is in a call with other consuls via her circlet. By the time she says another word, her Punisher is fully back in working order. "Consult I must my fellow consuls. Meet you in the spaceport, I shall." She boards her ship, and leaves you to wait.`
+
+
+mission "Heliarch Start 16"
+	name "Meeting on <planet>"
+	description "Meet with Consul Plortub and Magister Lotuora on <destination>, where they are preparing an attack over Lunarium forces on the planet of Secret Sky."
+	source "Mebla's Portion"
+	destination "Saros"
+	to offer
+		has "Heliarch Start 15: done"
+	on offer
+		conversation
 			``
 			`	`
+				accept
+
+
+mission "Heliarch Start 17"
+	landing
+	name "Battle of <system>"
+	description "Join the Heliarch forces in their attack against the Lunarium fleet in <system>. When the battle is over, meet with Consul Plortub and Magister Lotuora on <planet>."
+	source "Saros"
+	destination "Secret Sky"
+	to offer
+		has "Heliarch Start 16: done"
+	on offer
+		conversation
+			``
 			`	`
+				accept
+
+
+mission "Heliarch Start 18"
+	name "Meet with Consul Aulori"
+	description "Accompany Magister Lotuora's ship to <destination>, where you two will meet with Consul Aulori to receive your next orders."
+	source "Secret Sky"
+	destination "Periaxle Circuit"
+	to offer
+		has "Heliarch Start 17: done"
+	on offer
+		conversation
+			``
 			`	`
 				accept
