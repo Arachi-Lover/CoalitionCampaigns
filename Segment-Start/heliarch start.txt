@@ -575,7 +575,7 @@ mission "Heliarch Start 12"
 		government "Heliarch"
 		ship "Heliarch Punisher" "Timely Visitor"
 	on visit
-		dialog `You have reached the <planet>, but you left Iekie's ship behind. Better depart and wait for her to get here.`
+		dialog `You have reached <planet>, but you left Iekie's ship behind. Better depart and wait for her to get here.`
 
 
 mission "Heliarch Start 13"
@@ -609,7 +609,7 @@ mission "Heliarch Start 13"
 		government "Heliarch"
 		ship "Heliarch Punisher (Fuel)" "Timely Visitor"
 	on visit
-		dialog `You have reached the <planet>, but you left Iekie's ship behind. Better depart and wait for her to get here.`
+		dialog `You have reached <planet>, but you left Iekie's ship behind. Better depart and wait for her to get here.`
 	on complete
 		conversation
 			`You receive a call from Iekie as you are coming down <origin>'s atmosphere. "Avoid the main spaceport, we must. Follow me." You move through one of the planet's arid regions, towards a large rock formation. The <npc> slows down almost to a halt when approaching the rocks from the side, as if looking for a signal. Finally, Iekie finds an opening large enough for your ships, leading you into a cavernous chamber, with serpentine wires fixed around the inner walls, dotted by spotlights that come to life once they detect your movement. You see a handful of simple, sturdy barracks by one wall, and some control panels by another.`
@@ -760,8 +760,15 @@ mission "Heliarch Start 16"
 		has "Heliarch Start 15: done"
 	on offer
 		conversation
-			``
-			`	`
+			`Once again, you turn to a simple spaceport bar on <origin> to wait for Iekie's contact.`
+			`	The news cycling around the screens paint a bleak picture, with the apparent rumor of a Lunarium fleet headed to one end of Arach space having displaced most of the local fleets, allowing not only for them to raid Market of Gupta, home of House Mallob, but also nearly capture a Jump Drive and a Heliarch Consul on this planet.`
+			`	While the news anchors try their best to keep the feed to the facts and how the Heliarchy is responding, other agents around the spaceport take somber looks, and discuss quietly among themselves. "Denounce and depose House Bebliss, the council should have already!" Your translator catches one of the more spirited Arach agents here saying. "An open secret it is, that in league with the terrorists they are!"`
+			`	"A mere rumor, and a scandalous one at that." Another Arach smacks him on the leg in reprimand. "Believe do you every scandal piece fabricated by House Chamgar?"`
+			`	"More pressing, our worries regarding House Mallob are." One of their colleagues, a Saryd, tries to calm the two by switching topics.`
+			`	In truth, House Mallob has said little about the raid itself, other than that they lost tens of thousands of tons of raw material and ship parts. Their main storage and preprocessing complexes, along with their largest shipyard, were first sacked, and then demolished. There were no casualties of the Mallob workers, thankfully, but many suffered injuries. Top Arach economy commentators estimate the losses in capital to value in the billions of credits.`
+			`	You make out an armed Heliarch escort approaching the entrance to the bar, and see it's Consul Iekie. You pay your tab, and accompany her and her guards to her ship.`
+			`	"Headed I am to the Arach homeworld. A central position it occupies, and align my efforts with those of the agents there I will, to coordinate the investigation on the latest raid. Meanwhile, required you are on <planet>." She explains on the way. When you reach the landing pads, you notice many warships flying above, and a pair of extra Punishers docked beside Iekie's, to prevent any other attempts on the Jump Drive. "Consul Plortub has need of you. Cornered he has a Lunarium fleet, and help him bring them to justice, you shall."`
+			`	She is brief in bidding you farewell, boarding her ship with a worried look to the skies. She departs, and the pair of escort Punishers and other warships follow. You board your own ship, and set a course for <destination>.`
 				accept
 
 
@@ -775,18 +782,174 @@ mission "Heliarch Start 17"
 		has "Heliarch Start 16: done"
 	on offer
 		conversation
-			``
-			`	`
+			`In comparison to the Kimek homeworld, <origin> seems to have barely noticed the Lunarium's war declaration. Everything remains orderly, and commerce and other services persist as usual, with the local Heliarchs having no trouble in assisting civilians and even tourists.`
+			`	Within the headquarters you are guided to upon your arrival, however, it is another mather entirely. You are escorted to a war room where Consul Plortub is indicating to those assembled the estimated forces of the Lunarium fleet you are to face, over a holographic map of the sector. He acknowledges you as you come in, and gestures for you to a vacant seat. You are sat beside Magister Lotuora, who smiles warmly when she notices you.`
+			`	"So, reiterating what reported by our scouts was, captured by now a number of our own warships, the Lunarium has." Plortub resumes his explanation. "On <destination>, assembled they have a large fleet. A chokepoint, albeit small, it is. Locked from us now, a total of 3 systems are: <system>, where their fleet is, alongside Four Pillars and Lone Cloud." He looks around the room. "All assembled here now, the forces I requested - that being you lot - are. Set course we shall for <system>, to with the Lunarium make battle. We shall liberate this pocket from this mockery of an occupation. Questions?"`
+			`	A Kimek arbiter raises his voice first. "Open up Diligent Hand for a direct attack, with little hope of reinforcements, moving all our fleet for this battle would. Certain are we that necessary, such a force is?"`
+			`	Plortub seems to have been anticipating the question, as he scarcely takes his eyes off of the map projected in front of him. "No. But certain we are however that among the ships they have captured, a pair of Punishers is. Difficult enough to handle, the enemy is proving. Using civilian ships, masquerading as those we mean to defend... Spare no effort in ridding them of the chance to do the same with our own warships, the council has determined we must."`
+			`	"What of <origin>? In our absence, attempt they could to raid the homeworld." Another arbiter, this time a Saryd, mentions. "Hold the planet, they could not, but assault it and cripple its industry with their raids."`
+			`	Lotuora scoffs. "Dare to do so, they would not."`
+			`	"Not yet, at least." Plortub keeps his eyes on the map still. "Its own defenses, <origin> has. And back here immediately after the battle, half of you shall return. Assemble your crews. Depart we do at dawn." Finally looking up, he dismisses everyone. Lotuora accompanies you almost to your ship, before boarding her Judicator. Time to prepare for another battle. Only, now, against ships of the Heliarchs themselves too.`
 				accept
+	npc accompany
+		government "Heliarch"
+		personality escort disables heroic
+		fleet
+			names
+			variant
+				
+	npc evade
+		government "Lunarium"
+		personality staying heroic
+		system "Far Horizon"
+		fleet
+			names
+			variant
+				
+	on visit
+		dialog `There are still Lunarium ships patrolling overhead. Staying on <planet> while your allies are dying in orbit would be a very bad idea.`
 
 
 mission "Heliarch Start 18"
+	landing
 	name "Meet with Consul Aulori"
 	description "Accompany Magister Lotuora's ship to <destination>, where you two will meet with Consul Aulori to receive your next orders."
 	source "Secret Sky"
 	destination "Periaxle Circuit"
 	to offer
 		has "Heliarch Start 17: done"
+	on offer
+		conversation
+			`Consul Plortub's own Punisher follows the <ship> as you touch down on <origin>, with Lotuora's Judicator not far behind. He steps down the hatch as soon as the Punisher touches down, and messages half the captains, you included, to meet him immediately with the local authorities. He instructs the other half to head back to Saros at once, and reinforce the Saryd homeworld and neighboring planets.`
+			`	You follow Lotuora to the chambers where the Consul is seated across from the Heliarch arbiters responsible for the direct administration of this planet.`
+			`	"Cut off, all our communications were. Unresponsive, the planetary defenses were. The usual attack pattern from them, consul." One of the arbiters says, seemingly having finished a brief explanation of how the planet came to be occupied.`
+			`	"Know do you who the Lunarium contact, or contacts, is?" Plortub questions him right as he finishes. "One thing we expected, the comms are, but another matter entirely are the spaceport turrets. Inside help for this attack, they had, of that I am certain, unlike with the other raids. Cramped in a cell you all were just hours ago, so discarding the lot of you as suspects I am. Surely thought of some names, you have? Some leads?"`
+			`	The arbiters, all of them Saryds, seem uncomfortable with the consul's bluntness. "We... Yes. Provide we shall the names we noted absent from local guard operations on the day of their attack."`
+			`	Plortub is seemingly satisfied with that, and asks them to meet him at his ship within the hour with a preliminary report. He looks to you and Lotuora, and has you two follow him to his flagship. He takes his seat once you are all in the cockpit, turning in his chair to meet your eyes.`
+			`	"Suspicious are the people of this world. Saryds, almost all of them, and naturally extend to the Heliarch ranks recruited here, that demographic profile does." He rubs two legs together, and picks up his circlet to look at it briefly. "In truth, aware the council is that heavy ties with the Lunarium, this world must have. Consider it similar to Remote Blue, the Kimek world on the far north of the Coalition. But if to make arrests we are without certainty, and if produce no noticeable effect on the war, those arrests do, of what use are our efforts? Attacking our citizens and proving the Lunarium's point, we would be."`
+			choice
+				`	"What should we do next?"`
+					goto end
+				`	"What about House Bebliss? Are they also clear suspects?"`
+			`	Plortub chuckles. "Watching the news in Arach space you have been?" He sighs. "Five centuries ago, conspiring against the Heliarchy with the Ringless Cartel, House Bebliss was. A thousand years before that, the perpetrators of the Lofnar hoof plague, House Bebliss was, having developed it as a weapon of biological warfare." That particular comment makes Lotuora flinch in horror. "Not one year after our final victory in the War of Independence, in secret communication and in league with the Quarg themselves, House Bebliss was. This last claim, repeated multiple times over the millenia, by House Chamgar was. The previous accusations were by them fabricated as well, or by their proxies. In truth, contribute immensely to the Heliarchy and the Coalition as a whole, all Arach Houses do, House Bebliss chief among them with their maintenance of our communications network. Suspects among them, we of course have, but the arrest of an entire Arach House? Inconceivable, it is, especially if their seat we consider, the Stronghold of Flugbu..."`
+			choice
+				`	"Well, what should we do next?"`
+				`	"What's so special about Stronghold of Flugbu?"`
+			label end
+			`	Plortub's circlet starts beeping, and he puts it back on, immediately getting in a call. "Now? Both of them?" He says after long pauses where he just listens. "Have them help me with capturing the Lunarium in this pocket, and securing the region, I would." He pauses again. "Very well." He ends the call with a sigh, and turns to you once more. "Need of you two, Consul Aulori has. Meet him in <destination>, you two should. Remain I shall to deal with the Lunarium forces that remain in the pocket beyond this chokepoint, and to continue the investigation here."`
+			`	He bids you two farewell, and you exit his ship. Once you are back in the spaceport, Lotuora tells you she will follow your ship once you depart, and heads to board her Judicator.`
+				accept
+	npc accompany save
+		personality escort heroic opportunistic
+		government "Heliarch"
+		fleet
+			fighters
+				names "heliarch fighter"
+			variant
+				"Heliarch Judicator" "Joyous Guardian"
+				"Heliarch Pursuer" 2
+				"Heliarch Rover" 2
+				"Heliarch Stalker" 2
+	on visit
+		dialog `You have reached <planet>, but you left Lotuora's ship behind. Better depart and wait for her to get here.`
+
+
+mission "Heliarch Start 19 SOV"
+	landing
+	name ""
+	description ""
+	source "Periaxle Circuit"
+	destination "Ring of Wisdom"
+	to offer
+		has "Heliarch Start 18: done"
+	on offer
+		conversation
+			``
+			`	`
+			choice
+				`	`
+				`	`
+			
+				decline
+			
+				accept
+	npc accompany save
+		personality escort heroic opportunistic
+		government "Heliarch"
+		ship "Heliarch Punisher" "Enlightened Zealot"
+	on visit
+		dialog `You have reached the <planet>, but you left Aulori's ship behind. Better depart and wait for him to get here.`
+	on complete
+		conversation
+			``
+			`	`
+
+
+mission "Heliarch Start 20 SOV"
+	name ""
+	description ""
+	source "Ring of Wisdom"
+	destination "Ki Patek Ka"
+	to offer
+		has "Heliarch Start 19 SOV: done"
+	on offer
+		conversation
+			``
+			`	`
+				accept
+	on complete
+		conversation
+			``
+
+
+mission "Heliarch Start 19 STA"
+	name ""
+	description ""
+	source "Periaxle Circuit"
+	destination "Guardian Array Sapphire"
+	to offer
+		has "Heliarch Start 19 SOV: declined"
+	passengers 25
+	blocked `You have reached <origin>'s spaceport, but you need <capacity> in order to take on the next mission. Return here when you have the required space free.`
+	on offer
+		conversation
+			``
+			`	`
+				accept
+	on visit
+		dialog `You have reached <planet>, but you left Aulori's ship behind. Better depart and wait for him to get here.`
+	on complete
+		conversation
+			``
+			`	`
+
+
+mission "Heliarch Start 20 STA"
+	name ""
+	description ""
+	source "Guardian Array Sapphire"
+	destination "Ki Patek Ka"
+	to offer
+		has "Heliarch Start 19 STA: done"
+	on offer
+		conversation
+			``
+			`	`
+				accept
+	on complete
+		conversation
+			``
+
+
+mission "Heliarch Start 21"
+	name ""
+	description ""
+	source "Ki Patek Ka"
+	destination ""
+	to offer
+		or
+			has "Heliarch Start 20 SOV: done"
+			has "Heliarch Start 20 STA: done"
 	on offer
 		conversation
 			``
