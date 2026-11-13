@@ -62,38 +62,38 @@
 - End point: They enforce a blockade for ships passing through the ringed systems, the jig is up for Bebliss and Idriss, Remote Blue and Station Cian are lost, Flugbu fleet is stolen, meaning the big Heliarch reservoir/contingency chokepoint for the Arach side of the ringworlds is lost. They still hold a huge advantage, but the Lunarium is clearly a credible threat to their regime as a whole.
 
 ```
-	@Go (find out about the released Lunarium broadcast, then get orders to meet with Iekie + consuls on Ring of Friendship) Gives 2000 Heliarch salary, and unlocks LWs and the outfits found in their stock versions@
-	Escort (travel with investigator fleet to Ki Patek Ka)
+	@Go (get talk of propaganda stuffs released, then get orders to meet with Iekie + consuls on Ring of Friendship) Gives 2000 Heliarch salary, and unlocks LWs and their outfits@
+	Escort (travel with investigative-folks fleet to Ki Patek Ka)
 	Escort (go with some fewer ships to Fourth Shadow, mention there that ships won't be coming along for the next one due to recent attack)
 	Transport (take investigation team to Double Haze)
-	Fight (take on Lunarium fleet attacking there, when landing after win get call from Iekie that there was a great raid on Bloptab)
+	Fight (take on Lunarium fleet attacking there, when landing after win get call from Iekie that fuckery's aboot, mention raid on Bloptab)
 	Go (meet with Plortub on Ring of Power, he talks of the many attacks and then the big raid)
 	Transport (take Plortub to Bloptab, he sets up fleets to handle the patrolling of the region in order to try and find alloys)
-	Go (meet with Iekie again on Ring of Friendship, she mentions the messed-up communications of the attacks)
+	Go (meet with Iekie again on Ring of Friendship, she mentions fucky communications of the attacks)
 	GoFight (take on cornered fleet in Silver String, meeting with Lotuora there)
 	Escort (go with Lotuora to Ring of Wisdom, meet with Aulori. Lotuora was on Periaxle Circuit on Aulori's orders to start focus it on weapon R&D)
 	Go (meet with Iekie on Ring of Friendship)
-	Escort (bring Iekie delegation to Ablub's Invention, she disperses more investigators, and you ready to go visit Poisonwood)
-	Escort (head to Poisonwood escorting a Punisher with Iekie, talk with the governor there and discuss about the human gear the Lunarium has been seen using)
+	Escort (escort Iekie delegation to Ablub's Invention, she disperses investigatisms, and you ready to go visit Poisonwood)
+	Escort (head to Poisonwood escorting a Punisher with Iekie, talk with the governor there and asks about the human gear on Lunarium)
 	Escort (go to Mebla's Portion, Iekie follows returning earlier than scheduled, attempting to get bearings before Lunarium knows you're back)
-	Fight (learn of fleeing Lunarium scattered after "raid" on Market of Gupta (it is a diversion, Mallob is in league with the Lunarium, but you don't know that yet because you picked Heliarch))
-	Go (meet Plortub and Lotuora on Saros, while Iekie heads to Ahr to check up on the investigation)
+	Fight (learn of fleeing Lunarium scattered after "raid" on Market of Gupta (it is a fake you see, Mallob is in league with moon mates, but you don't know that yet because you picked Heliarch))
+	Go (meet Plortub and Lotuora on Saros, while Iekie heads to Ahr to check up on investigatisms)
 	GoFight (take on Lunarium in Far Horizon, retaking Secret Sky and keeping Lunarium forces in Lone Could/Four Pillars locked by a chokepoint)
 	Escort (go with Lotuora to Periaxle Circuit, meeting with Aulori there)
 	* (Lotuora does the opposite of what you pick here)
-		Transport (take Aulori and some test weapons to the Ring of Wisdom, he loredumps all over the place and sets to work on the weapons) Sovereignty++
-		Go (meet with Iekie in Guardian Array Sapphire, to help transport investigation peoples) Stability++
+		Escort/Transport (take Aulori and some test weapons to the Ring of Wisdom, he loredumps all over the place and sets to work on the weapons) Sovereignty++
+		Transport (meet with Iekie in Guardian Array Sapphire, to help transport investigation peoples) Stability++
 	* (Lotuora does the opposite of what you pick here)
 	Transport (bring many agents to Ki Patek Ka, so they get to help the research folks there/they help keep the most populous world in order)
 	GoFight (battle Lunarium on Sandy Two)
 	Transport/Escort (take injured Heliarch troops to be treated on safer Ki Patek Ka, followed by ships that are doing the same. talk with Plortub via Skype)
-	Go (meet with Plortub on Ring of Power, he mentions they're preparing to blockade traffic passing by the ring systems)
+	Go (meet with Plortub on Ring of Power, he mentions they're preparing to mega blockade traffic passing by the ring systems)
 	Transport (take Plortub to Ring of Friendship, Iekie, Aulori and many more consuls are there)
 	Escort (head with convoy of mystery supplies to Far Home)
 	Go (meet with Lotuora on Belug's Plunge)
 	Escort (head with Lotuora to Guardian Array Sapphire, but stopping on Stronghold of Flugbu on the way for keeping tabs on Bebliss)
 	Fight (combat Lunarium that've stolen the Flugbu reserve fleet)
-	Go (meet with consuls on Ring of Friendship)
+	Go (meet with consuls on Ring of Friendship) (Plortub is the speaker, every Arach present is pissed)
 	Transport (take Plortub to Ki Patek Ka, where he'll start organizing against Remote Blue)
-	Go (meet with Aulori on Secret Sky, he exposition dumps about his Quarg theories)
+	Go (meet with Aulori on Secret Sky, he offers to take the player's blood sample, this determines if they get a dose Blood of Lor Ie Vees in the Flugbu fight against the Quarg)
 ```
